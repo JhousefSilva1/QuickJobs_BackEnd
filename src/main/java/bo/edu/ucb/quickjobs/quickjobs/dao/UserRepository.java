@@ -29,15 +29,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
 package bo.edu.ucb.quickjobs.quickjobs.dao;
 
 import bo.edu.ucb.quickjobs.quickjobs.entity.User;
-import org.apache.ibatis.annotations.Insert;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
@@ -50,9 +49,9 @@ public interface UserRepository  {
 //
 //    void delete (User user);
 
-    @Query("Select qj_user_user FROM qj_user WHERE qj_user_user = ?1")
+    @Select("Select qj_user_user FROM qj_user WHERE qj_user_user = ?1")
     List<User> findByName(@Param("user") String user);
 
-    @Query("Select qj_user_user FROM qj_user WHERE qj_user_user = ?1")
-    List<User> findByPaswordByUsername(@Param("user") String user);
+    @Select("Select qj_user_password FROM qj_user WHERE qj_user_user = #{user}")
+    String findByPaswordByUsername(String user);
 }

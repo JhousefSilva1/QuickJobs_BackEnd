@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class QuickjobsApplicationTests {
 
-
+	@Test
+	void contextLoads() {
+	}
 
 }

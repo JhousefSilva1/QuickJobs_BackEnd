@@ -23,8 +23,8 @@ public class SecurityBl {
 
     private RolRepository rolRepository;
 
-    public SecurityBl() {
-    }
+//    public SecurityBl() {
+//    }
 
     public SecurityBl(UserRepository userRepository) {
         this.userRepository = userRepository;

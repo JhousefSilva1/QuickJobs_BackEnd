@@ -38,7 +38,7 @@ public class Person {
     private String birthOfDay;
 
     @Column(name = "qj_Person_Dni")
-    private int dni;
+    private String dni;
 
     @Column(name = "qj_Person_Img_Profile")
     private String imgProfile;
@@ -65,7 +65,7 @@ public class Person {
         // Constructor vacío
     }
 
-    public Person(User user, Document document, String names, String surnames, String birthOfDay, int dni,
+    public Person(User user, Document document, String names, String surnames, String birthOfDay, String dni,
                   String imgProfile, String cellphone, int status, String userauth, String host, Date date, int version) {
         this.user = user;
         this.document = document;
@@ -130,11 +130,11 @@ public class Person {
         this.birthOfDay = birthOfDay;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
