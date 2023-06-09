@@ -1,27 +1,28 @@
 package bo.edu.ucb.quickjobs.quickjobs.bl;
 
-import bo.edu.ucb.quickjobs.quickjobs.dao.PersonRepository;
-import bo.edu.ucb.quickjobs.quickjobs.dao.UserRepository;
-import bo.edu.ucb.quickjobs.quickjobs.entity.Person;
-import bo.edu.ucb.quickjobs.quickjobs.entity.User;
+import bo.edu.ucb.quickjobs.quickjobs.domain.dao.UserRepository;
+import bo.edu.ucb.quickjobs.quickjobs.domain.dto.UserDto;
+import bo.edu.ucb.quickjobs.quickjobs.persistence.entity.User;
 
 public class UserBl {
-
     private UserRepository userRepository;
 
-    private PersonRepository personRepository;
-
-    public UserBl(UserRepository userRepository, PersonRepository personRepository) {
+    public UserBl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.personRepository = personRepository;
     }
 
-    public void Person(Person person) {
+    public UserDto saveUser(UserDto userDto) {
         User user = new User();
-
-    }
-
-    public Person findPersonById(Long id) {
-        return (Person) personRepository.findById(id).get();
+        user.setUserId(userDto.getUserId());
+        user.setUsername(userDto.getUsername());
+        user.setPassword(userDto.getPassword());
+        user.setStatus(userDto.getStatus());
+        user.setVersion(userDto.getVersion());
+        user.setUser(userDto.getUser());
+        user.setHost(userDto.getHost());
+        user.setDate(userDto.getDate());
+        user = userRepository.save(user);
+        userDto.setUserId(user.getUserId());
+        return userDto;
     }
 }

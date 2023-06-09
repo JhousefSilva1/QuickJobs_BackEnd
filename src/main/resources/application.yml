@@ -1,8 +1,8 @@
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/quickjobs_db
+        url: jdbc:postgresql://localhost:5432/quickjobsdb
         username: admin
-        password: 0204962310972812202214012023
+        password: 12345
         driver-class-name: org.postgresql.Driver
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
