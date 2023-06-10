@@ -5,12 +5,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "qj_Person")
 
-public class Person {
+public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,10 +40,10 @@ public class Person {
     @Column(name = "qj_Person_Email", nullable = false, length = 500)
     private String email;
 
-    @Column(name = "qj_Person_ImgProfile", nullable = false, length = 500)
+    @Column(name = "qj_Person_Imgprofile", nullable = false, length = 500)
     private String imgProfile;
 
-    @Column(name = "qj_Person_CellPhone", nullable = false, length = 500)
+    @Column(name = "qj_Person_Cellphone", nullable = false, length = 500)
     private String cellPhone;
 
     @Column(name = "qj_Person_Status", nullable = false)

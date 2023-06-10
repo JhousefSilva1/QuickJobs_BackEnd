@@ -3,6 +3,7 @@ package bo.edu.ucb.quickjobs.quickjobs.dto;
 public class AuthResDto {
 
     private String token;
+
     private String refresh;
 
     public AuthResDto() {

@@ -1,5 +1,6 @@
 package bo.edu.ucb.quickjobs.quickjobs.util;
 
+
 import bo.edu.ucb.quickjobs.quickjobs.bl.SecurityBl;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -9,7 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 public class AuthUtil {
-
+    /**
+     * Recibimos el token JWT y si sale bien, retornamos el sub, caso controraio lanzamos una excepcion
+     * @param
+     * @return
+     */
     public static String isUserAuthenticated(String jwt) {
         String subject = null;
         try {
@@ -25,7 +30,7 @@ public class AuthUtil {
 
     public static String getTokenFromHeader(Map<String, String> headers) {
         if (headers.get("Authorization") == null && headers.get("authorization") == null ) {
-           // throw new UberKException("No se ha enviado el token de autorización");
+            throw new QuickJobsException("No se ha enviado el token de autorización");
         }
         // Se acostumbra que cuando se envia el token, se lo envia en el siguiente formato
         // Authorization: Bearer TOKEN

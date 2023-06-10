@@ -1,60 +1,51 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
-public class ResponseDto <T> {
+public class ResponseDto<T> {
 
-    private String Code;
+    private T data;
+    private String message;
+    private boolean success;
 
-    private T response;
+    public ResponseDto(){
 
-    private String errorMessage;
-
-
-
-    public ResponseDto() {
     }
 
-    public ResponseDto(String Code, T response, String errorMessage) {
-        this.Code = Code;
-        this.response = response;
-        this.errorMessage = errorMessage;
+    public ResponseDto(T data, String message, boolean success) {
+        this.data = data;
+        this.message = message;
+        this.success = success;
     }
 
-    public String getCode() {
-        return this.Code;
+    public T getData() {
+        return data;
     }
 
-    public void setCode(String Code) {
-        this.Code = Code;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public T getResponse() {
-        return this.response;
+    public String getMessage() {
+        return message;
     }
 
-    public void setResponse(T response) {
-        this.response = response;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getErrorMessage() {
-        return this.errorMessage;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     @Override
-
     public String toString() {
-        return "{" +
-            " Code='" + getCode() + "'" +
-            ", response='" + getResponse() + "'" +
-            ", errorMessage='" + getErrorMessage() + "'" +
-            "}";
+        return "ResponseDto{" +
+                "data=" + data +
+                ", message='" + message + '\'' +
+                ", success=" + success +
+                '}';
     }
-
-
-
-
-
 }
