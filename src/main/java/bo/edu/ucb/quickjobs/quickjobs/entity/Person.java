@@ -1,109 +1,93 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
 import java.util.Date;
 
 @Entity
 @Table(name = "qj_Person")
+
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Person_Id_Person")
-    private Integer id;
+    private Long idPerson;
 
-    @ManyToOne
-    @JoinColumn(name = "qj_User_qj_User_Id_User")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "qj_Documents_qj_Documents_Id_Docuement")
-    private Document document;
-
-    @Column(name = "qj_Person_Names")
+    @Column(name = "qj_Person_Names", nullable = false, length = 500)
     private String names;
 
-    @Column(name = "qj_Person_Surnames")
+    @Column(name = "qj_Person_Surnames", nullable = false, length = 500)
     private String surnames;
 
-    @Column(name = "qj_Person_Birth_of_Day")
-    private String birthOfDay;
+    @Column(name = "qj_Person_Username", nullable = false, length = 500)
+    private String username;
 
-    @Column(name = "qj_Person_Dni")
+    @Column(name = "qj_Person_Password", nullable = false, length = 500)
+    private String password;
+
+    @Column(name = "qj_Person_Born", nullable = false, length = 500)
+    private String born;
+
+    @Column(name = "qj_Person_Dni", nullable = false, length = 500)
     private String dni;
 
-    @Column(name = "qj_Person_Img_Profile")
+    @Column(name = "qj_Person_Email", nullable = false, length = 500)
+    private String email;
+
+    @Column(name = "qj_Person_ImgProfile", nullable = false, length = 500)
     private String imgProfile;
 
-    @Column(name = "qj_Person_Cellphone")
-    private String cellphone;
+    @Column(name = "qj_Person_CellPhone", nullable = false, length = 500)
+    private String cellPhone;
 
-    @Column(name = "qj_Person_Status")
+    @Column(name = "qj_Person_Status", nullable = false)
     private int status;
 
-    @Column(name = "qj_Person_tx_user")
-    private String userauth;
-
-    @Column(name = "qj_Person_tx_host")
-    private String host;
-
-    @Column(name = "qj_Person_tx_date")
-    private Date date;
-
-    @Column(name = "qj_Person_Version")
+    @Column(name = "qj_Person_Version", nullable = false)
     private int version;
 
+    @Column(name = "qj_Person_tx_User", nullable = false, length = 500)
+    private String txUser;
+
+    @Column(name = "qj_Person_tx_Host", nullable = false, length = 500)
+    private String txHost;
+
+    @Column(name = "qj_Person_tx_Date", nullable = false)
+    private Date txDate;
+
     public Person() {
-        // Constructor vacío
+        // Constructor vacío necesario para JPA
     }
 
-    public Person(User user, Document document, String names, String surnames, String birthOfDay, String dni,
-                  String imgProfile, String cellphone, int status, String userauth, String host, Date date, int version) {
-        this.user = user;
-        this.document = document;
+    public Person(String names, String surnames, String username, String password, String born, String dni,
+                  String email, String imgProfile, String cellPhone, int status, int version, String txUser,
+                  String txHost, Date txDate) {
         this.names = names;
         this.surnames = surnames;
-        this.birthOfDay = birthOfDay;
+        this.username = username;
+        this.password = password;
+        this.born = born;
         this.dni = dni;
+        this.email = email;
         this.imgProfile = imgProfile;
-        this.cellphone = cellphone;
+        this.cellPhone = cellPhone;
         this.status = status;
-        this.userauth = userauth;
-        this.host = host;
-        this.date = date;
         this.version = version;
+        this.txUser = txUser;
+        this.txHost = txHost;
+        this.txDate = txDate;
     }
 
-    public Integer getId() {
-        return id;
+    public Long getIdPerson() {
+        return idPerson;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Document getDocuments() {
-        return document;
-    }
-
-    public void setDocuments(Document document) {
-        this.document = document;
+    public void setIdPerson(Long idPerson) {
+        this.idPerson = idPerson;
     }
 
     public String getNames() {
@@ -122,12 +106,28 @@ public class Person {
         this.surnames = surnames;
     }
 
-    public String getBirthOfDay() {
-        return birthOfDay;
+    public String getUsername() {
+        return username;
     }
 
-    public void setBirthOfDay(String birthOfDay) {
-        this.birthOfDay = birthOfDay;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getBorn() {
+        return born;
+    }
+
+    public void setBorn(String born) {
+        this.born = born;
     }
 
     public String getDni() {
@@ -138,6 +138,14 @@ public class Person {
         this.dni = dni;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getImgProfile() {
         return imgProfile;
     }
@@ -146,12 +154,12 @@ public class Person {
         this.imgProfile = imgProfile;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getCellPhone() {
+        return cellPhone;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
     }
 
     public int getStatus() {
@@ -162,30 +170,6 @@ public class Person {
         this.status = status;
     }
 
-    public String getUserauth() {
-        return userauth;
-    }
-
-    public void setUser(String userauth) {
-        this.userauth = userauth;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -194,23 +178,48 @@ public class Person {
         this.version = version;
     }
 
+    public String getTxUser() {
+        return txUser;
+    }
+
+    public void setTxUser(String txUser) {
+        this.txUser = txUser;
+    }
+
+    public String getTxHost() {
+        return txHost;
+    }
+
+    public void setTxHost(String txHost) {
+        this.txHost = txHost;
+    }
+
+    public Date getTxDate() {
+        return txDate;
+    }
+
+    public void setTxDate(Date txDate) {
+        this.txDate = txDate;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
-                ", user=" + user +
-                ", documents=" + document +
+                "idPerson=" + idPerson +
                 ", names='" + names + '\'' +
                 ", surnames='" + surnames + '\'' +
-                ", birthOfDay='" + birthOfDay + '\'' +
-                ", dni=" + dni +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", born='" + born + '\'' +
+                ", dni='" + dni + '\'' +
+                ", email='" + email + '\'' +
                 ", imgProfile='" + imgProfile + '\'' +
-                ", cellphone='" + cellphone + '\'' +
+                ", cellPhone='" + cellPhone + '\'' +
                 ", status=" + status +
-                ", userauth='" + userauth + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
                 ", version=" + version +
+                ", txUser='" + txUser + '\'' +
+                ", txHost='" + txHost + '\'' +
+                ", txDate=" + txDate +
                 '}';
     }
 }

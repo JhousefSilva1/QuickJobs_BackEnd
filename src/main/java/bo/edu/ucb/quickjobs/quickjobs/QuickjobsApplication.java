@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 
 @SpringBootApplication
-@MapperScan("bo.edu.ucb.quickjobs.quickjobs.dao")
+@MapperScan("bo.edu.ucb.quickjobs.quickjobs.repository")
 public class QuickjobsApplication {
 	@Bean
 

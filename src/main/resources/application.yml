@@ -1,6 +1,6 @@
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/quickjobsdb
+        url: jdbc:postgresql://localhost:5432/quickJobsss_db
         username: admin
         password: 12345
         driver-class-name: org.postgresql.Driver
