@@ -1,49 +1,47 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "qj_Person")
-
-public class Person implements Serializable {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Person_Id_Person")
-    private Long idPerson;
+    private Long id;
 
-    @Column(name = "qj_Person_Names", nullable = false, length = 500)
+    @Column(name = "qj_Person_Names", nullable = false)
     private String names;
 
-    @Column(name = "qj_Person_Surnames", nullable = false, length = 500)
+    @Column(name = "qj_Person_Surnames", nullable = false)
     private String surnames;
 
-    @Column(name = "qj_Person_Username", nullable = false, length = 500)
+    @Column(name = "qj_Person_Username", nullable = false)
     private String username;
 
-    @Column(name = "qj_Person_Password", nullable = false, length = 500)
+    @Column(name = "qj_Person_Password", nullable = false)
     private String password;
 
-    @Column(name = "qj_Person_Born", nullable = false, length = 500)
+    @Column(name = "qj_Person_Born", nullable = false)
     private String born;
 
-    @Column(name = "qj_Person_Dni", nullable = false, length = 500)
+    @Column(name = "qj_Person_Dni", nullable = false)
     private String dni;
 
-    @Column(name = "qj_Person_Email", nullable = false, length = 500)
+    @Column(name = "qj_Person_Email", nullable = false)
     private String email;
 
-    @Column(name = "qj_Person_Imgprofile", nullable = false, length = 500)
+    @Column(name = "qj_Person_ImgProfile", nullable = false)
     private String imgProfile;
 
-    @Column(name = "qj_Person_Cellphone", nullable = false, length = 500)
+    @Column(name = "qj_Person_CellPhone", nullable = false)
     private String cellPhone;
 
     @Column(name = "qj_Person_Status", nullable = false)
@@ -52,17 +50,16 @@ public class Person implements Serializable {
     @Column(name = "qj_Person_Version", nullable = false)
     private int version;
 
-    @Column(name = "qj_Person_tx_User", nullable = false, length = 500)
+    @Column(name = "qj_Person_tx_User", nullable = false)
     private String txUser;
 
-    @Column(name = "qj_Person_tx_Host", nullable = false, length = 500)
+    @Column(name = "qj_Person_tx_Host", nullable = false)
     private String txHost;
 
     @Column(name = "qj_Person_tx_Date", nullable = false)
     private Date txDate;
 
     public Person() {
-        // Constructor vacío necesario para JPA
     }
 
     public Person(String names, String surnames, String username, String password, String born, String dni,
@@ -84,12 +81,14 @@ public class Person implements Serializable {
         this.txDate = txDate;
     }
 
-    public Long getIdPerson() {
-        return idPerson;
+    // Getters and Setters
+
+    public Long getId() {
+        return id;
     }
 
-    public void setIdPerson(Long idPerson) {
-        this.idPerson = idPerson;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNames() {
@@ -207,7 +206,7 @@ public class Person implements Serializable {
     @Override
     public String toString() {
         return "Person{" +
-                "idPerson=" + idPerson +
+                "id=" + id +
                 ", names='" + names + '\'' +
                 ", surnames='" + surnames + '\'' +
                 ", username='" + username + '\'' +

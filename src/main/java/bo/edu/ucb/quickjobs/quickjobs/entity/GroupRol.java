@@ -1,45 +1,51 @@
-package bo.edu.ucb.quickjobs.quickjobs.entity;
-
+import bo.edu.ucb.quickjobs.quickjobs.entity.Group;
+import bo.edu.ucb.quickjobs.quickjobs.entity.Rol;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "qj_Country")
-public class Country {
+@Table(name = "qj_Group_qj_Rol")
+public class GroupRol {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_Country_Id_Country")
+    @Column(name = "qj_Group_qj_Rol_Id_GroupRol")
     private Long id;
 
-    @Column(name = "qj_Country_Name_Country")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "qj_Group_qj_Group_Id_Group")
+    private Group group;
 
-    @Column(name = "qj_Country_Status")
+    @ManyToOne
+    @JoinColumn(name = "qj_Rol_qj_Rol_Id_Rol")
+    private Rol rol;
+
+    @Column(name = "qj_Group_qj_Rol_Status")
     private int status;
 
-    @Column(name = "qj_Country_Version")
+    @Column(name = "qj_Group_qj_Rol_Version")
     private int version;
 
-    @Column(name = "qj_Country_tx_User")
+    @Column(name = "qj_Group_qj_Rol_tx_User")
     private String txUser;
 
-    @Column(name = "qj_Country_tx_Host")
+    @Column(name = "qj_Group_qj_Rol_tx_Host")
     private String txHost;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "qj_Country_tx_Date")
+    @Column(name = "qj_Group_qj_Rol_tx_Date")
     private Date txDate;
 
     // Constructor sin argumentos (obligatorio para JPA)
-    public Country() {
+    public GroupRol() {
     }
 
     // Constructor con todos los campos
-    public Country(Long id, String name, int status, int version, String txUser, String txHost, Date txDate) {
+    public GroupRol(Long id, Group group, Rol rol, int status, int version, String txUser, String txHost, Date txDate) {
         this.id = id;
-        this.name = name;
+        this.group = group;
+        this.rol = rol;
         this.status = status;
         this.version = version;
         this.txUser = txUser;
@@ -56,12 +62,20 @@ public class Country {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
     public int getStatus() {
@@ -107,7 +121,8 @@ public class Country {
     // toString
     @Override
     public String toString() {
-        return "Country [id=" + id + ", name=" + name + ", status=" + status + ", version=" + version +
-                ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
+        return "GroupRol [id=" + id + ", group=" + group + ", rol=" + rol +
+                ", status=" + status + ", version=" + version + ", txUser=" + txUser +
+                ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
 }

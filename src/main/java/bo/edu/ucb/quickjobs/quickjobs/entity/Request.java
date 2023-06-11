@@ -1,15 +1,6 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import java.math.BigDecimal;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -22,54 +13,74 @@ public class Request {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "qj_Contract_qj_Contract_Id_Contract")
-    private Contract contract;
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person")
+    private Person person;
 
     @Column(name = "qj_Request_Begin_Date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date beginDate;
 
     @Column(name = "qj_Request_End_Date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
 
     @Column(name = "qj_Request_Begin_Hour")
+    @Temporal(TemporalType.TIME)
     private Date beginHour;
 
     @Column(name = "qj_Request_End_Hour")
+    @Temporal(TemporalType.TIME)
     private Date endHour;
 
-    @Column(name = "qj_Request_Hours")
-    private int hours;
+    @Column(name = "qj_Request_Totally_Hours")
+    private int totallyHours;
 
     @Column(name = "qj_Request_Price_Hour")
-    private BigDecimal pricePerHour;
+    private int priceHour;
 
-    @Column(name = "qj_Request_Total_Price")
-    private BigDecimal totalPrice;
-
-    @Column(name = "qj_Request_Status_Order")
-    private String statusOrder;
+    @Column(name = "qj_Status_Request")
+    private String statusRequest;
 
     @Column(name = "qj_Request_Status")
-    private int status;
-
-    @Column(name = "qj_Request_tx_user")
-    private String user;
-
-    @Column(name = "qj_Request_tx_host")
-    private String host;
-
-    @Column(name = "qj_Request_tx_date")
-    private Date date;
+    private int requestStatus;
 
     @Column(name = "qj_Request_Version")
     private int version;
 
+    @Column(name = "qj_Request_tx_User")
+    private String txUser;
+
+    @Column(name = "qj_Request_tx_Host")
+    private String txHost;
+
+    @Column(name = "qj_Request_tx_Date")
+    private int txDate;
+
+    // Constructor sin argumentos (obligatorio para JPA)
     public Request() {
-        // Constructor vacío
     }
 
-    // Agrega el constructor con todos los parámetros según tus necesidades
+    // Constructor con todos los campos
+    public Request(Long id, Person person, Date beginDate, Date endDate, Date beginHour, Date endHour,
+                   int totallyHours, int priceHour, String statusRequest, int requestStatus, int version,
+                   String txUser, String txHost, int txDate) {
+        this.id = id;
+        this.person = person;
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+        this.beginHour = beginHour;
+        this.endHour = endHour;
+        this.totallyHours = totallyHours;
+        this.priceHour = priceHour;
+        this.statusRequest = statusRequest;
+        this.requestStatus = requestStatus;
+        this.version = version;
+        this.txUser = txUser;
+        this.txHost = txHost;
+        this.txDate = txDate;
+    }
 
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -78,12 +89,12 @@ public class Request {
         this.id = id;
     }
 
-    public Contract getContract() {
-        return contract;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setContract(Contract contract) {
-        this.contract = contract;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public Date getBeginDate() {
@@ -118,68 +129,36 @@ public class Request {
         this.endHour = endHour;
     }
 
-    public int getHours() {
-        return hours;
+    public int getTotallyHours() {
+        return totallyHours;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setTotallyHours(int totallyHours) {
+        this.totallyHours = totallyHours;
     }
 
-    public BigDecimal getPricePerHour() {
-        return pricePerHour;
+    public int getPriceHour() {
+        return priceHour;
     }
 
-    public void setPricePerHour(BigDecimal pricePerHour) {
-        this.pricePerHour = pricePerHour;
+    public void setPriceHour(int priceHour) {
+        this.priceHour = priceHour;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
+    public String getStatusRequest() {
+        return statusRequest;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setStatusRequest(String statusRequest) {
+        this.statusRequest = statusRequest;
     }
 
-    public String getStatusOrder() {
-        return statusOrder;
+    public int getRequestStatus() {
+        return requestStatus;
     }
 
-    public void setStatusOrder(String statusOrder) {
-        this.statusOrder = statusOrder;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRequestStatus(int requestStatus) {
+        this.requestStatus = requestStatus;
     }
 
     public int getVersion() {
@@ -190,24 +169,36 @@ public class Request {
         this.version = version;
     }
 
+    public String getTxUser() {
+        return txUser;
+    }
+
+    public void setTxUser(String txUser) {
+        this.txUser = txUser;
+    }
+
+    public String getTxHost() {
+        return txHost;
+    }
+
+    public void setTxHost(String txHost) {
+        this.txHost = txHost;
+    }
+
+    public int getTxDate() {
+        return txDate;
+    }
+
+    public void setTxDate(int txDate) {
+        this.txDate = txDate;
+    }
+
+    // toString
     @Override
     public String toString() {
-        return "Request{" +
-                "id=" + id +
-                ", contract=" + contract +
-                ", beginDate=" + beginDate +
-                ", endDate=" + endDate +
-                ", beginHour=" + beginHour +
-                ", endHour=" + endHour +
-                ", hours=" + hours +
-                ", pricePerHour=" + pricePerHour +
-                ", totalPrice=" + totalPrice +
-                ", statusOrder='" + statusOrder + '\'' +
-                ", status=" + status +
-                ", user='" + user + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
-                ", version=" + version +
-                '}';
+        return "Request [id=" + id + ", person=" + person + ", beginDate=" + beginDate + ", endDate=" + endDate
+                + ", beginHour=" + beginHour + ", endHour=" + endHour + ", totallyHours=" + totallyHours
+                + ", priceHour=" + priceHour + ", statusRequest=" + statusRequest + ", requestStatus=" + requestStatus
+                + ", version=" + version + ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
 }

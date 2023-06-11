@@ -3,47 +3,50 @@ package bo.edu.ucb.quickjobs.quickjobs.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "qj_Rol")
-public class Rol {
+@Table(name = "qj_Request_qj_Service")
+public class RequestService {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_Rol_Id_Rol")
+    @Column(name = "qj_Request_qj_Service_Id_RequestService")
     private int id;
 
-    @Column(name = "qj_Rol_Name_Rol")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "qj_Request_qj_Request_Id_Request")
+    private Request request;
 
-    @Column(name = "qj_Rol_Description_Name_Rol")
-    private String description;
+    @ManyToOne
+    @JoinColumn(name = "qj_Service_qj_Servide_Id_Service")
+    private Service service;
 
-    @Column(name = "qj_Rol_Status")
+    @Column(name = "qj_Request_qj_Service_Status")
     private int status;
 
-    @Column(name = "qj_Rol_Version")
+    @Column(name = "qj_Request_qj_Service_Version")
     private int version;
 
-    @Column(name = "qj_Rol_tx_User")
-    private int txUser;
+    @Column(name = "qj_Request_qj_Service_tx_User")
+    private String txUser;
 
-    @Column(name = "qj_Rol_tx_Host")
+    @Column(name = "qj_Request_qj_Service_tx_Host")
     private String txHost;
 
-    @Column(name = "qj_Rol_tx_Date")
+    @Column(name = "qj_Request_qj_Service_tx_Date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     // Constructor sin argumentos (obligatorio para JPA)
-    public Rol() {
+    public RequestService() {
     }
 
     // Constructor con todos los campos
-    public Rol(int id, String name, String description, int status, int version, int txUser, String txHost, Date txDate) {
+    public RequestService(int id, Request request, Service service, int status, int version, String txUser,
+                          String txHost, Date txDate) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.request = request;
+        this.service = service;
         this.status = status;
         this.version = version;
         this.txUser = txUser;
@@ -60,20 +63,20 @@ public class Rol {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Request getRequest() {
+        return request;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRequest(Request request) {
+        this.request = request;
     }
 
-    public String getDescription() {
-        return description;
+    public Service getService() {
+        return service;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setService(Service service) {
+        this.service = service;
     }
 
     public int getStatus() {
@@ -92,11 +95,11 @@ public class Rol {
         this.version = version;
     }
 
-    public int getTxUser() {
+    public String getTxUser() {
         return txUser;
     }
 
-    public void setTxUser(int txUser) {
+    public void setTxUser(String txUser) {
         this.txUser = txUser;
     }
 
@@ -119,7 +122,7 @@ public class Rol {
     // toString
     @Override
     public String toString() {
-        return "Rol [id=" + id + ", name=" + name + ", description=" + description + ", status=" + status
+        return "RequestService [id=" + id + ", request=" + request + ", service=" + service + ", status=" + status
                 + ", version=" + version + ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
 }

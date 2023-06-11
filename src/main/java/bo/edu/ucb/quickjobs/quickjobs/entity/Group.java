@@ -1,54 +1,57 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-import java.util.Date;
 import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "qj_Group")
 public class Group {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Group_Id_Group")
     private Long id;
 
-    @Column(name = "qj_Group_Name_Group", length = 500, nullable = false)
+    @Column(name = "qj_Group_Name_Group")
     private String name;
 
-    @Column(name = "qj_Group_Description_Name_Group", length = 500, nullable = false)
+    @Column(name = "qj_Group_Description_Name_Group")
     private String description;
 
-    @Column(name = "qj_Group_Status", nullable = false)
+    @Column(name = "qj_Group_Status")
     private int status;
 
-    @Column(name = "qj_Group_Version", nullable = false)
+    @Column(name = "qj_Group_Version")
     private int version;
 
-    @Column(name = "qj_Group_tx_User", length = 500, nullable = false)
-    private String user;
+    @Column(name = "qj_Group_tx_User")
+    private String txUser;
 
-    @Column(name = "qj_Group_tx_Host", length = 500, nullable = false)
-    private String host;
+    @Column(name = "qj_Group_tx_Host")
+    private String txHost;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "qj_Group_tx_Date", nullable = false)
-    private Date date;
+    @Column(name = "qj_Group_tx_Date")
+    private Date txDate;
 
-    // Getters and setters (omitted for brevity)
-
+    // Constructor sin argumentos (obligatorio para JPA)
     public Group() {
     }
 
-    public Group(Long id, String name, String description, int status, int version, String user, String host, Date date) {
+    // Constructor con todos los campos
+    public Group(Long id, String name, String description, int status, int version, String txUser, String txHost, Date txDate) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.status = status;
         this.version = version;
-        this.user = user;
-        this.host = host;
-        this.date = date;
+        this.txUser = txUser;
+        this.txHost = txHost;
+        this.txDate = txDate;
     }
 
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -89,41 +92,35 @@ public class Group {
         this.version = version;
     }
 
-    public String getUser() {
-        return user;
+    public String getTxUser() {
+        return txUser;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setTxUser(String txUser) {
+        this.txUser = txUser;
     }
 
-    public String getHost() {
-        return host;
+    public String getTxHost() {
+        return txHost;
     }
 
-    public void setHost(String host) {
-        this.host = host;
+    public void setTxHost(String txHost) {
+        this.txHost = txHost;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getTxDate() {
+        return txDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTxDate(Date txDate) {
+        this.txDate = txDate;
     }
 
+    // toString
     @Override
     public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                ", version=" + version +
-                ", user='" + user + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
-                '}';
+        return "Group [id=" + id + ", name=" + name + ", description=" + description +
+                ", status=" + status + ", version=" + version + ", txUser=" + txUser +
+                ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
 }

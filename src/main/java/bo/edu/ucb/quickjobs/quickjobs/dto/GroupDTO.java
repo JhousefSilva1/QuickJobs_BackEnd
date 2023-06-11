@@ -1,45 +1,27 @@
-package bo.edu.ucb.quickjobs.quickjobs.entity;
-
-import jakarta.persistence.*;
+package bo.edu.ucb.quickjobs.quickjobs.dto;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "qj_Country")
-public class Country {
+public class GroupDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_Country_Id_Country")
-    private Long id;
-
-    @Column(name = "qj_Country_Name_Country")
+    private int id;
     private String name;
-
-    @Column(name = "qj_Country_Status")
+    private String description;
     private int status;
-
-    @Column(name = "qj_Country_Version")
     private int version;
-
-    @Column(name = "qj_Country_tx_User")
     private String txUser;
-
-    @Column(name = "qj_Country_tx_Host")
     private String txHost;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "qj_Country_tx_Date")
     private Date txDate;
 
-    // Constructor sin argumentos (obligatorio para JPA)
-    public Country() {
+    // Constructor sin argumentos
+    public GroupDTO() {
     }
 
     // Constructor con todos los campos
-    public Country(Long id, String name, int status, int version, String txUser, String txHost, Date txDate) {
+    public GroupDTO(int id, String name, String description, int status, int version, String txUser, String txHost, Date txDate) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.status = status;
         this.version = version;
         this.txUser = txUser;
@@ -48,11 +30,11 @@ public class Country {
     }
 
     // Getters y Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -62,6 +44,14 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getStatus() {
@@ -107,7 +97,15 @@ public class Country {
     // toString
     @Override
     public String toString() {
-        return "Country [id=" + id + ", name=" + name + ", status=" + status + ", version=" + version +
-                ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
+        return "GroupDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                ", version=" + version +
+                ", txUser='" + txUser + '\'' +
+                ", txHost='" + txHost + '\'' +
+                ", txDate=" + txDate +
+                '}';
     }
 }

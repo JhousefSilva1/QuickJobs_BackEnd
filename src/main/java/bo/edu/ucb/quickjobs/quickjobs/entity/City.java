@@ -1,53 +1,58 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
+
 @Entity
 @Table(name = "qj_City")
 public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_City_id_City")
+    @Column(name = "qj_City_Id_City")
     private Long id;
 
-    @Column(name = "qj_City_City")
-    private String city;
+    @Column(name = "qj_City_Name_City")
+    private String name;
 
     @Column(name = "qj_City_Status")
     private int status;
 
-    @Column(name = "qj_City_tx_user")
-    private String user;
-
-    @Column(name = "qj_City_tx_host")
-    private String host;
-
-    @Column(name = "qj_City_tx_date")
-    private Date date;
-
     @Column(name = "qj_City_Version")
     private int version;
 
+    @Column(name = "qj_City_tx_User")
+    private String txUser;
+
+    @Column(name = "qj_City_tx_Host")
+    private String txHost;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "qj_City_tx_Date")
+    private Date txDate;
+
+    @ManyToOne
+    @JoinColumn(name = "qj_Country_qj_Country_Id_Country")
+    private Country country;
+
+    // Constructor sin argumentos (obligatorio para JPA)
     public City() {
-        // Constructor vacío
     }
 
-    public City(String city, int status, String user, String host, Date date, int version) {
-        this.city = city;
+    // Constructor con todos los campos
+    public City(Long id, String name, int status, int version, String txUser, String txHost, Date txDate, Country country) {
+        this.id = id;
+        this.name = name;
         this.status = status;
-        this.user = user;
-        this.host = host;
-        this.date = date;
         this.version = version;
+        this.txUser = txUser;
+        this.txHost = txHost;
+        this.txDate = txDate;
+        this.country = country;
     }
 
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -56,12 +61,12 @@ public class City {
         this.id = id;
     }
 
-    public String getCity() {
-        return city;
+    public String getName() {
+        return name;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStatus() {
@@ -72,30 +77,6 @@ public class City {
         this.status = status;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -104,16 +85,42 @@ public class City {
         this.version = version;
     }
 
+    public String getTxUser() {
+        return txUser;
+    }
+
+    public void setTxUser(String txUser) {
+        this.txUser = txUser;
+    }
+
+    public String getTxHost() {
+        return txHost;
+    }
+
+    public void setTxHost(String txHost) {
+        this.txHost = txHost;
+    }
+
+    public Date getTxDate() {
+        return txDate;
+    }
+
+    public void setTxDate(Date txDate) {
+        this.txDate = txDate;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    // toString
     @Override
     public String toString() {
-        return "City{" +
-                "id=" + id +
-                ", city='" + city + '\'' +
-                ", status=" + status +
-                ", user='" + user + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
-                ", version=" + version +
-                '}';
+        return "City [id=" + id + ", name=" + name + ", status=" + status + ", version=" + version +
+                ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + ", country=" + country + "]";
     }
 }

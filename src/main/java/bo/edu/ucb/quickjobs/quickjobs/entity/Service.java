@@ -1,12 +1,7 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+import jakarta.persistence.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
@@ -15,69 +10,95 @@ public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_Service_Id_Service",nullable = false, unique = true)
-    private Long id;
+    @Column(name = "qj_Servide_Id_Service")
+    private int id;
 
-    @Column(name = "qj_Service_Service")
-    private String service;
+    @Column(name = "qj_Service_Name_Service")
+    private String name;
 
-    @Column(name = "qj_Service_Price_Hour")
-    private double pricePerHour;
+    @Column(name = "qj_Service_Description_Name_Service")
+    private String description;
 
-    @Column(name = "qj_Service_ImageIcon")
-    private String imageIcon;
+    @Column(name = "qj_Service_PriceHourBase")
+    private int priceHourBase;
+
+    @Column(name = "qj_Service_ImagenIcon")
+    private String imagenIcon;
 
     @Column(name = "qj_Service_Status")
     private int status;
 
-    @Column(name = "qj_Service_tx_user")
-    private String user;
-
-    @Column(name = "qj_Service_tx_host")
-    private String host;
-
-    @Column(name = "qj_Service_tx_date")
-    private Date date;
-
     @Column(name = "qj_Service_Version")
     private int version;
 
+    @Column(name = "qj_Service_tx_User")
+    private String txUser;
+
+    @Column(name = "qj_Service_tx_Host")
+    private int txHost;
+
+    @Column(name = "qj_Service_tx_Date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date txDate;
+
+    // Constructor sin argumentos (obligatorio para JPA)
     public Service() {
-        // Constructor vacío
     }
 
-    // Agrega el constructor con todos los parámetros según tus necesidades
+    // Constructor con todos los campos
+    public Service(int id, String name, String description, int priceHourBase, String imagenIcon, int status,
+                   int version, String txUser, int txHost, Date txDate) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.priceHourBase = priceHourBase;
+        this.imagenIcon = imagenIcon;
+        this.status = status;
+        this.version = version;
+        this.txUser = txUser;
+        this.txHost = txHost;
+        this.txDate = txDate;
+    }
 
-    public Long getId() {
+    // Getters y Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getService() {
-        return service;
+    public String getName() {
+        return name;
     }
 
-    public void setService(String service) {
-        this.service = service;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getPricePerHour() {
-        return pricePerHour;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPricePerHour(double pricePerHour) {
-        this.pricePerHour = pricePerHour;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getImageIcon() {
-        return imageIcon;
+    public int getPriceHourBase() {
+        return priceHourBase;
     }
 
-    public void setImageIcon(String imageIcon) {
-        this.imageIcon = imageIcon;
+    public void setPriceHourBase(int priceHourBase) {
+        this.priceHourBase = priceHourBase;
+    }
+
+    public String getImagenIcon() {
+        return imagenIcon;
+    }
+
+    public void setImagenIcon(String imagenIcon) {
+        this.imagenIcon = imagenIcon;
     }
 
     public int getStatus() {
@@ -88,30 +109,6 @@ public class Service {
         this.status = status;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -120,18 +117,35 @@ public class Service {
         this.version = version;
     }
 
+    public String getTxUser() {
+        return txUser;
+    }
+
+    public void setTxUser(String txUser) {
+        this.txUser = txUser;
+    }
+
+    public int getTxHost() {
+        return txHost;
+    }
+
+    public void setTxHost(int txHost) {
+        this.txHost = txHost;
+    }
+
+    public Date getTxDate() {
+        return txDate;
+    }
+
+    public void setTxDate(Date txDate) {
+        this.txDate = txDate;
+    }
+
+    // toString
     @Override
     public String toString() {
-        return "Service{" +
-                "id=" + id +
-                ", service='" + service + '\'' +
-                ", pricePerHour=" + pricePerHour +
-                ", imageIcon='" + imageIcon + '\'' +
-                ", status=" + status +
-                ", user='" + user + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
-                ", version=" + version +
-                '}';
+        return "Service [id=" + id + ", name=" + name + ", description=" + description + ", priceHourBase="
+                + priceHourBase + ", imagenIcon=" + imagenIcon + ", status=" + status + ", version=" + version
+                + ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
 }

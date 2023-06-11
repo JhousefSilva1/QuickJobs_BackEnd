@@ -1,17 +1,9 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-import java.util.Date;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "qj_Payment")
+@Table(name = "qj_Payments")
 public class Payment {
 
     @Id
@@ -19,37 +11,20 @@ public class Payment {
     @Column(name = "qj_Payment_Id_Payment")
     private Long id;
 
-    @Column(name = "qj_Payment_Paymet")
-    private String payment;
+    @Column(name = "qj_Payment_Name_Payment")
+    private String name;
 
-    @Column(name = "qj_Payment_Status")
-    private int status;
-
-    @Column(name = "qj_Payment_tx_user")
-    private String user;
-
-    @Column(name = "qj_Payment_tx_host")
-    private String host;
-
-    @Column(name = "qj_Payment_tx_date")
-    private Date date;
-
-    @Column(name = "qj_Payment_Version")
-    private int version;
-
+    // Constructor sin argumentos (obligatorio para JPA)
     public Payment() {
-        // Constructor vacío
     }
 
-    public Payment(String payment, int status, String user, String host, Date date, int version) {
-        this.payment = payment;
-        this.status = status;
-        this.user = user;
-        this.host = host;
-        this.date = date;
-        this.version = version;
+    // Constructor con todos los campos
+    public Payment(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -58,64 +33,17 @@ public class Payment {
         this.id = id;
     }
 
-    public String getPayment() {
-        return payment;
+    public String getName() {
+        return name;
     }
 
-    public void setPayment(String payment) {
-        this.payment = payment;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
+    // toString
     @Override
     public String toString() {
-        return "Payment{" +
-                "id=" + id +
-                ", payment='" + payment + '\'' +
-                ", status=" + status +
-                ", user='" + user + '\'' +
-                ", host='" + host + '\'' +
-                ", date=" + date +
-                ", version=" + version +
-                '}';
+        return "Payment [id=" + id + ", name=" + name + "]";
     }
 }

@@ -1,43 +1,24 @@
-package bo.edu.ucb.quickjobs.quickjobs.entity;
-
-import jakarta.persistence.*;
+package bo.edu.ucb.quickjobs.quickjobs.dto;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "qj_Country")
-public class Country {
+public class CityDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "qj_Country_Id_Country")
-    private Long id;
-
-    @Column(name = "qj_Country_Name_Country")
+    private int id;
     private String name;
-
-    @Column(name = "qj_Country_Status")
     private int status;
-
-    @Column(name = "qj_Country_Version")
     private int version;
-
-    @Column(name = "qj_Country_tx_User")
     private String txUser;
-
-    @Column(name = "qj_Country_tx_Host")
     private String txHost;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "qj_Country_tx_Date")
     private Date txDate;
+    private int countryId;
 
-    // Constructor sin argumentos (obligatorio para JPA)
-    public Country() {
+    // Constructor sin argumentos
+    public CityDTO() {
     }
 
     // Constructor con todos los campos
-    public Country(Long id, String name, int status, int version, String txUser, String txHost, Date txDate) {
+    public CityDTO(int id, String name, int status, int version, String txUser, String txHost, Date txDate, int countryId) {
         this.id = id;
         this.name = name;
         this.status = status;
@@ -45,14 +26,15 @@ public class Country {
         this.txUser = txUser;
         this.txHost = txHost;
         this.txDate = txDate;
+        this.countryId = countryId;
     }
 
     // Getters y Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -104,10 +86,26 @@ public class Country {
         this.txDate = txDate;
     }
 
+    public int getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(int countryId) {
+        this.countryId = countryId;
+    }
+
     // toString
     @Override
     public String toString() {
-        return "Country [id=" + id + ", name=" + name + ", status=" + status + ", version=" + version +
-                ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
+        return "CityDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", version=" + version +
+                ", txUser='" + txUser + '\'' +
+                ", txHost='" + txHost + '\'' +
+                ", txDate=" + txDate +
+                ", countryId=" + countryId +
+                '}';
     }
 }
