@@ -1,8 +1,14 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class PaymentDTO {
 
     private int paymentId;
+
+    @NotEmpty
+    @Size(min =4, message = "El nombre del pago deberaia tener al menos 4 caracteres")
     private String paymentName;
 
     // Constructor sin argumentos

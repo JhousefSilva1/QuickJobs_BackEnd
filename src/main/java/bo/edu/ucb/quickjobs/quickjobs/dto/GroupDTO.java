@@ -1,11 +1,18 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 public class GroupDTO {
 
     private int id;
+    @NotEmpty
+    @Size(min =4, message = "El nombre del grupo deberia tener al menos 4 caracteres")
     private String name;
+    @NotEmpty
+    @Size(min =4, message = "La descripcion del grupo deberia tener al menos 4 caracteres")
     private String description;
     private int status;
     private int version;

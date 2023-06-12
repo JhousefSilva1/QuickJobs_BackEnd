@@ -1,12 +1,10 @@
-
-
 ###add publication
 POST http://localhost:8080/api/publication
 Content-Type: application/json
 Accept: application/json
 
 {
-  "title": "Api rest 16",
+  "title": "Api rest 1200",
   "description": "Aprender a desarrollar api",
   "content": "JWT, Hibernate, Spring Data JPA, "
 }

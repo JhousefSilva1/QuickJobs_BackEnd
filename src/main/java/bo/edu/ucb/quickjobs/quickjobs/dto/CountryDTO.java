@@ -1,11 +1,18 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 public class CountryDTO {
 
     private int id;
+
+    @NotEmpty
+    @Size(min = 4, message = "El nombre del pais deberaia tener al menos 4 caracteres")
     private String name;
+
     private int status;
     private int version;
     private String txUser;

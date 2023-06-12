@@ -1,12 +1,11 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "qj_Person")
@@ -58,6 +57,10 @@ public class Person {
 
     @Column(name = "qj_Person_tx_Date", nullable = false)
     private Date txDate;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "person",  cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Address> address = new HashSet<>();
 
     public Person() {
     }

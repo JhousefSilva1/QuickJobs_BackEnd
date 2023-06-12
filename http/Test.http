@@ -1,0 +1,18 @@
+##### LEER UN MENSAJES: esta ruta devuelve un mensaje accesible por todos los usuarios.
+GET http://localhost:8080/api/test/all
+Content-Type: application/json
+
+##### LEER UN MENSAJES COACH: esta ruta devuelve un mensaje accesible por los usuarios coach.
+GET http://localhost:8080/api/test/coach
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImlhdCI6MTY3OTkwNjc2MiwiZXhwIjoxNjc5OTA2ODYyfQ.0y2z62fIdhtKb-KKYSFG-u4hNUjmnGRrU_FHf5F7zRhP2T-D2ti2DlLu3ha6ngvaY3RuOIezVLcmD54pZ3tVug
+
+##### LEER UN MENSAJES REFEREE: esta ruta devuelve un mensaje accesible por los usuarios referee.
+GET http://localhost:8080/api/test/referee
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZWZlcmVlIiwiaWF0IjoxNjc5ODc4ODUxLCJleHAiOjE2Nzk5NjUyNTF9._j59MNFULaNnlOOgUFNIVeQFNAnKrDKlGatxGWyxCLiwAPbsYbcwec4zGFqLF4CFa5LrY5UEZYNxSOfFd87xhQ
+
+##### LEER UN MENSAJES ORGANIZER: esta ruta devuelve un mensaje accesible por los usuarios organizer.
+GET http://localhost:8080/api/test/organizer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcmdhbml6ZXIiLCJpYXQiOjE2Nzk4Nzg4OTcsImV4cCI6MTY3OTk2NTI5N30.P77rPCv6i3NSFYr2aPxj64S94merTUDaSFVT94I_RO1kpeAELEymlp1c7ePlw7CND1Qs68rYxc_by2ZvAWB2Ng

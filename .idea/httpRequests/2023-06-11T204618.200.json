@@ -1,0 +1,11 @@
+{
+  "refreshToken": "93187340-879d-4725-9bf0-b45ce58d5643",
+  "id": 1,
+  "username": "coach",
+  "email": "coach@email.com",
+  "roles": [
+    "ROLE_ADMIN"
+  ],
+  "tokenType": "Bearer",
+  "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImlhdCI6MTY4NjUzMDc3OCwiZXhwIjoxNjg2NTMxNzc4fQ.l_F9bwSIXeNF9iDhETdV6ke8cp7UwA5vWkX6H3g3Ry93fCOnnV-5OZs6xHkPgd0grao-mjCZQkfq0s2ikqSvng"
+}

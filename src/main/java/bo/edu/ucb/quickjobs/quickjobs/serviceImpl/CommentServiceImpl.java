@@ -1,4 +1,4 @@
-package bo.edu.ucb.quickjobs.quickjobs.service;
+package bo.edu.ucb.quickjobs.quickjobs.serviceImpl;
 
 import bo.edu.ucb.quickjobs.quickjobs.dto.CommentDTO;
 import bo.edu.ucb.quickjobs.quickjobs.entity.Comment;
@@ -7,6 +7,7 @@ import bo.edu.ucb.quickjobs.quickjobs.exceptions.BlogAppException;
 import bo.edu.ucb.quickjobs.quickjobs.exceptions.ResourceNotFoundException;
 import bo.edu.ucb.quickjobs.quickjobs.repository.CommentRepository;
 import bo.edu.ucb.quickjobs.quickjobs.repository.PublicationRepository;
+import bo.edu.ucb.quickjobs.quickjobs.service.CommentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CommentServiceImpl implements CommentService{
+public class CommentServiceImpl implements CommentService {
     @Autowired
     private ModelMapper modelMapper;
 

@@ -1,17 +1,33 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import java.sql.Date;
 import java.sql.Time;
 
 public class RequestDTO {
 
+
     private int requestId;
     private int personId;
+    @NotEmpty
+    @Size(min = 10, message = "El tamaño debe ser mayor a 10")
     private Date beginDate;
+    @NotEmpty
+    @Size(min = 10, message = "El tamaño debe ser mayor a 10")
     private Date endDate;
+    @NotEmpty
+    @Size(min = 10, message = "El tamaño debe ser mayor a 10")
     private Time beginHour;
+    @NotEmpty
+    @Size(min = 10, message = "El tamaño debe ser mayor a 10")
     private Time endHour;
+    @NotEmpty
+    @Size(min = 10, message = "El tamaño debe ser mayor a 10")
     private int totallyHours;
+    @NotEmpty
+    @Size(min = 5, message = "El tamaño debe ser mayor a 5")
     private int priceHour;
     private String statusRequest;
 

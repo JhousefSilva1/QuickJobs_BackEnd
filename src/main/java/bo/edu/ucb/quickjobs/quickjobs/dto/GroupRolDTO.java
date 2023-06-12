@@ -1,11 +1,15 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 public class GroupRolDTO {
 
     private int groupRolId;
     private int groupId;
+
     private int rolId;
     private int status;
     private int version;

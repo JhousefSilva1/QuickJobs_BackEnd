@@ -2,6 +2,8 @@ package bo.edu.ucb.quickjobs.quickjobs.entity;
 
 import jakarta.persistence.*;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name = "comment")
 public class Comment {

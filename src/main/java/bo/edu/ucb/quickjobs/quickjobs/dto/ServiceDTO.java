@@ -1,11 +1,20 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import java.sql.Timestamp;
 
 public class ServiceDTO {
     private int idService;
+    @NotEmpty
+    @Size(min = 15, message = "El tamaño debe ser mayor a 15")
     private String nameService;
+    @NotEmpty
+    @Size(min = 15, message = "El tamaño debe ser mayor a 15")
     private String descriptionService;
+    @NotEmpty
+    @Size(min = 15, message = "El tamaño debe ser mayor a 15")
     private int priceHourBase;
     private String imageIcon;
     private int status;

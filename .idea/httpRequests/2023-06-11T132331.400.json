@@ -1,0 +1,5 @@
+{
+  "name": "El nombre no debe ser vacio",
+  "body": "El cuerpo del comentario debe tener al menos 10 caracteres",
+  "email": "El emial no debe ser vacio"
+}

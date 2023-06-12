@@ -1,0 +1,6 @@
+{
+  "path": "/api/auth/signin",
+  "error": "Unauthorized",
+  "message": "No enum constant bo.edu.ucb.quickjobs.quickjobs.security.model.ERole.ROLE_ADMIN",
+  "status": 401
+}

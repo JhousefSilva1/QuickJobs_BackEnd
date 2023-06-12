@@ -4,9 +4,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "Commentario Excelente",
+  "name": "Commentario Bueno",
   "email": "joshep@gmail.com",
-  "body": "Muy bien"
+  "body": "Muy bien excelente"
 }
 
 ###get all publications
@@ -15,7 +15,7 @@ Content-Type: application/json
 Accept: application/json
 
 ###get all publications
-GET http://localhost:8080/api/publication/1/comments/2
+GET http://localhost:8080/api/publication/1/comments/1
 Content-Type: application/json
 Accept: application/json
 
@@ -33,7 +33,7 @@ Accept: application/json
 {
   "name": "Commentario perfecto",
   "email": "joshep@gmail.com",
-  "body": "Muy bien"
+  "body": "Muy bien excelente debo llegar a 10 "
 }
 
 ###Delete publications by id

@@ -1,10 +1,13 @@
 package bo.edu.ucb.quickjobs.quickjobs.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+
 import java.util.Date;
 
 public class DocumentsDTO {
 //prueba
     private int id;
+
     private String ciFront;
     private String ciReverse;
     private String licenseFront;

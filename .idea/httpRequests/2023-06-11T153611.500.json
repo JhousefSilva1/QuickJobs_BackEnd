@@ -1,0 +1,5 @@
+{
+  "timestampDate": "2023-06-11T19:36:11.628+00:00",
+  "message": "could not execute statement; SQL [n/a]; constraint [uknrkcidigvkemps7kkfn25nvg1]",
+  "details": "uri=/api/publication"
+}

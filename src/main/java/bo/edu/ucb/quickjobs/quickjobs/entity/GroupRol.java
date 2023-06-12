@@ -1,3 +1,5 @@
+package bo.edu.ucb.quickjobs.quickjobs.entity;
+
 import bo.edu.ucb.quickjobs.quickjobs.entity.Group;
 import bo.edu.ucb.quickjobs.quickjobs.entity.Rol;
 import jakarta.persistence.*;

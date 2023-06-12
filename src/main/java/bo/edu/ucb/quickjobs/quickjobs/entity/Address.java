@@ -1,6 +1,8 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
 import jakarta.persistence.*;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -53,6 +55,11 @@ public class Address {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "qj_Address_tx_Date")
     private Date txDate;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person persons;
 
     // Constructor sin argumentos (obligatorio para JPA)
     public Address() {
@@ -191,6 +198,16 @@ public class Address {
         this.txDate = txDate;
     }
 
+    public Person getPersons() {
+        return persons;
+    }
+
+    public void setPersons(Person persons) {
+        this.persons = persons;
+    }
+
+
+
     // toString
     @Override
     public String toString() {
@@ -199,4 +216,8 @@ public class Address {
                 ", apartment=" + apartment + ", status=" + status + ", version=" + version +
                 ", txUser=" + txUser + ", txHost=" + txHost + ", txDate=" + txDate + "]";
     }
+
+
+
+
 }

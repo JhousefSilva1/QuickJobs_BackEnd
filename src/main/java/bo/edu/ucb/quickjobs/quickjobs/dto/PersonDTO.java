@@ -1,14 +1,33 @@
+package bo.edu.ucb.quickjobs.quickjobs.dto;
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class PersonDTO {
 
     private int personId;
+    @NotEmpty
+    @Size(min = 4, message = "El nombre deberaia tener al menos 4 caracteres")
     private String names;
+    @NotEmpty
+    @Size(min = 4, message = "El apellido deberaia tener al menos 4 caracteres")
     private String surnames;
+    @NotEmpty
+    @Size(min = 4, message = "El nombre de usuario deberaia tener al menos 4 caracteres")
     private String username;
+    @NotEmpty
+    @Size(min = 8, message = "La contraseña deberaia tener al menos 8 caracteres")
     private String password;
     private String born;
+    @NotEmpty
+    @Size(min = 7, message = "El DNI deberaia tener al menos 7 caracteres")
     private String dni;
+    @NotEmpty
+    @Size(min = 4, message = "El correo deberaia tener al menos 4 caracteres")
     private String email;
     private String imgProfile;
+    @NotEmpty
+    @Size(min = 8, message = "El numero de celular deberaia tener al menos 8 caracteres")
     private String cellPhone;
 
     // Constructor sin argumentos

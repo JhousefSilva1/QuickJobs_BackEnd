@@ -1,10 +1,11 @@
-package bo.edu.ucb.quickjobs.quickjobs.service;
+package bo.edu.ucb.quickjobs.quickjobs.serviceImpl;
 
 import bo.edu.ucb.quickjobs.quickjobs.dto.PublicationDTO;
 import bo.edu.ucb.quickjobs.quickjobs.dto.PublicationResponse;
 import bo.edu.ucb.quickjobs.quickjobs.entity.Publication;
 import bo.edu.ucb.quickjobs.quickjobs.exceptions.ResourceNotFoundException;
 import bo.edu.ucb.quickjobs.quickjobs.repository.PublicationRepository;
+import bo.edu.ucb.quickjobs.quickjobs.service.PublicationService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
