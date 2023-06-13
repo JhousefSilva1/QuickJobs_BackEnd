@@ -13,13 +13,14 @@ public class PersonDTO {
     private String gender;
     private String cellPhone;
     private String email;
+
+    private String password;
     private String imgProfile;
 
     public PersonDTO() {
     }
 
-    public PersonDTO(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone,
-                     String email, String imgProfile) {
+    public PersonDTO(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile) {
         this.idPerson = idPerson;
         this.names = names;
         this.surnames = surnames;
@@ -28,6 +29,7 @@ public class PersonDTO {
         this.gender = gender;
         this.cellPhone = cellPhone;
         this.email = email;
+        this.password = password;
         this.imgProfile = imgProfile;
     }
 
@@ -95,6 +97,14 @@ public class PersonDTO {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getImgProfile() {
         return imgProfile;
     }
@@ -114,6 +124,7 @@ public class PersonDTO {
                 ", gender='" + gender + '\'' +
                 ", cellPhone='" + cellPhone + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", imgProfile='" + imgProfile + '\'' +
                 '}';
     }

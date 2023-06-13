@@ -26,16 +26,16 @@ public class Person {
     @Column(name = "qj_Person_Gender", nullable = false)
     private String gender;
 
-    @Column(name = "qj_Person_CellPhone", nullable = false)
+    @Column(name = "qj_Person_Cellphone", nullable = false)
     private String cellPhone;
 
     @Column(name = "qj_Person_Email", nullable = false)
     private String email;
 
     @Column(name = "qj_Person_Password", nullable = false)
-    private int password;
+    private String password;
 
-    @Column(name = "qj_Person_ImgProfile")
+    @Column(name = "qj_Person_Imgprofile")
     private String imgProfile;
 
     @Column(name = "qj_Person_Status", nullable = false)
@@ -57,7 +57,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, int password, String imgProfile, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Person(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idPerson = idPerson;
         this.names = names;
         this.surnames = surnames;
@@ -139,11 +139,11 @@ public class Person {
         this.email = email;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

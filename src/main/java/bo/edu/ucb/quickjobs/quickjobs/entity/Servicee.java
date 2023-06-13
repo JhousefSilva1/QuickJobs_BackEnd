@@ -18,10 +18,10 @@ public class Servicee {
     @Column(name = "qj_Service_Description_Name_Service", nullable = false)
     private String descriptionNameService;
 
-    @Column(name = "qj_Service_PriceHourBase", nullable = false)
+    @Column(name = "qj_Service_Pricehourbase", nullable = false)
     private int priceHourBase;
 
-    @Column(name = "qj_Service_ImagenIcon", nullable = false)
+    @Column(name = "qj_Service_Imagenicon", nullable = false)
     private String imageIcon;
 
     @Column(name = "qj_Service_Status", nullable = false)
