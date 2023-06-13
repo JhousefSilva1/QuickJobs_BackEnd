@@ -4,11 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="" />
+    <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Documents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/GroupPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/GroupRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/RequestPayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Rol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Servicee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686578989137</updated>
       <workItem from="1686578993971" duration="111000" />
-      <workItem from="1686579240337" duration="1646000" />
+      <workItem from="1686579240337" duration="4863000" />
     </task>
     <servers />
   </component>
