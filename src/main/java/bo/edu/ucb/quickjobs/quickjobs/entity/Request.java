@@ -1,33 +1,64 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
-import java.sql.Timestamp;
+import jakarta.persistence.*;
+
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Request")
 public class Request {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Request_Id_Request")
     private int idRequest;
-    private int personId1;
-    private int personId2;
+
+    @Column(name = "qj_Person_qj_Person_Id_Person", nullable = false)
+    private int personId;
+
+    @Column(name = "qj_Person_2_qj_Person_Id_Person", nullable = false)
+    private int person2Id;
+
+    @Column(name = "qj_Service_qj_Servide_Id_Service", nullable = false)
     private int serviceId;
+
+    @Column(name = "qj_Address_qj_Address_Id_Address", nullable = false)
     private int addressId;
-    private Timestamp beginDate;
-    private Timestamp endDate;
+
+    @Column(name = "qj_Request_Begin_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date beginDate;
+
+    @Column(name = "qj_Request_End_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date endDate;
+
+    @Column(name = "qj_Request_Order_Status", nullable = false)
     private int orderStatus;
+
+    @Column(name = "qj_Request_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Request_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Request_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Request_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Request_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Request() {
     }
 
-    // Constructor
-    public Request(int idRequest, int personId1, int personId2, int serviceId, int addressId, Timestamp beginDate,
-                   Timestamp endDate, int orderStatus, boolean status, int version, String txUser, String txHost,
-                   Date txDate) {
+    public Request(int idRequest, int personId, int person2Id, int serviceId, int addressId, Date beginDate, Date endDate, int orderStatus, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idRequest = idRequest;
-        this.personId1 = personId1;
-        this.personId2 = personId2;
+        this.personId = personId;
+        this.person2Id = person2Id;
         this.serviceId = serviceId;
         this.addressId = addressId;
         this.beginDate = beginDate;
@@ -40,7 +71,6 @@ public class Request {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdRequest() {
         return idRequest;
     }
@@ -49,20 +79,20 @@ public class Request {
         this.idRequest = idRequest;
     }
 
-    public int getPersonId1() {
-        return personId1;
+    public int getPersonId() {
+        return personId;
     }
 
-    public void setPersonId1(int personId1) {
-        this.personId1 = personId1;
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
 
-    public int getPersonId2() {
-        return personId2;
+    public int getPerson2Id() {
+        return person2Id;
     }
 
-    public void setPersonId2(int personId2) {
-        this.personId2 = personId2;
+    public void setPerson2Id(int person2Id) {
+        this.person2Id = person2Id;
     }
 
     public int getServiceId() {
@@ -81,19 +111,19 @@ public class Request {
         this.addressId = addressId;
     }
 
-    public Timestamp getBeginDate() {
+    public Date getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(Timestamp beginDate) {
+    public void setBeginDate(Date beginDate) {
         this.beginDate = beginDate;
     }
 
-    public Timestamp getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -149,8 +179,8 @@ public class Request {
     public String toString() {
         return "Request{" +
                 "idRequest=" + idRequest +
-                ", personId1=" + personId1 +
-                ", personId2=" + personId2 +
+                ", personId=" + personId +
+                ", person2Id=" + person2Id +
                 ", serviceId=" + serviceId +
                 ", addressId=" + addressId +
                 ", beginDate=" + beginDate +
@@ -163,4 +193,8 @@ public class Request {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }

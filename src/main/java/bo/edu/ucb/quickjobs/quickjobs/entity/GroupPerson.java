@@ -1,23 +1,44 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Group_qj_Person")
 public class GroupPerson {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Group_qj_Person_GroupPerson")
     private int groupPersonId;
+
+    @Column(name = "qj_Group_qj_Group_Id_Group", nullable = false)
     private int groupId;
+
+    @Column(name = "qj_Person_qj_Person_Id_Person", nullable = false)
     private int personId;
+
+    @Column(name = "qj_Group_qj_Person_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Group_qj_Person_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Group_qj_Person_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Group_qj_Person_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Group_qj_Person_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public GroupPerson() {
     }
 
-    // Constructor
-    public GroupPerson(int groupPersonId, int groupId, int personId, boolean status, int version, String txUser,
-                       String txHost, Date txDate) {
+    public GroupPerson(int groupPersonId, int groupId, int personId, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.groupPersonId = groupPersonId;
         this.groupId = groupId;
         this.personId = personId;
@@ -28,7 +49,6 @@ public class GroupPerson {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getGroupPersonId() {
         return groupPersonId;
     }
@@ -106,4 +126,9 @@ public class GroupPerson {
                 ", txDate=" + txDate +
                 '}';
     }
+
+
+// Constructor, getters, and setters...
+
+    // Additional methods...
 }

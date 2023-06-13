@@ -1,22 +1,41 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+import jakarta.persistence.*;
+
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Payments")
 public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Payment_Id_Payment")
     private int idPayment;
+
+    @Column(name = "qj_Payment_Name_Payment", nullable = false)
     private String namePayment;
+
+    @Column(name = "qj_Payment_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Payment_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Payment_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Payment_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Payment_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Payment() {
     }
 
-    // Constructor
-    public Payment(int idPayment, String namePayment, boolean status, int version, String txUser, String txHost,
-                   Date txDate) {
+    public Payment(int idPayment, String namePayment, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idPayment = idPayment;
         this.namePayment = namePayment;
         this.status = status;
@@ -26,7 +45,6 @@ public class Payment {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdPayment() {
         return idPayment;
     }
@@ -95,4 +113,8 @@ public class Payment {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }

@@ -1,26 +1,47 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Group")
 public class Group {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Group_Id_Group")
     private int idGroup;
-    private String nameGroup;
-    private String descriptionGroup;
+
+    @Column(name = "qj_Group_Name_Group", nullable = false)
+    private String groupName;
+
+    @Column(name = "qj_Group_Description_Name_Group", nullable = false)
+    private String groupDescription;
+
+    @Column(name = "qj_Group_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Group_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Group_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Group_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Group_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Group() {
     }
 
-    // Constructor
-    public Group(int idGroup, String nameGroup, String descriptionGroup, boolean status, int version, String txUser,
-                 String txHost, Date txDate) {
+    public Group(int idGroup, String groupName, String groupDescription, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idGroup = idGroup;
-        this.nameGroup = nameGroup;
-        this.descriptionGroup = descriptionGroup;
+        this.groupName = groupName;
+        this.groupDescription = groupDescription;
         this.status = status;
         this.version = version;
         this.txUser = txUser;
@@ -28,7 +49,6 @@ public class Group {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdGroup() {
         return idGroup;
     }
@@ -37,20 +57,20 @@ public class Group {
         this.idGroup = idGroup;
     }
 
-    public String getNameGroup() {
-        return nameGroup;
+    public String getGroupName() {
+        return groupName;
     }
 
-    public void setNameGroup(String nameGroup) {
-        this.nameGroup = nameGroup;
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
-    public String getDescriptionGroup() {
-        return descriptionGroup;
+    public String getGroupDescription() {
+        return groupDescription;
     }
 
-    public void setDescriptionGroup(String descriptionGroup) {
-        this.descriptionGroup = descriptionGroup;
+    public void setGroupDescription(String groupDescription) {
+        this.groupDescription = groupDescription;
     }
 
     public boolean isStatus() {
@@ -97,8 +117,8 @@ public class Group {
     public String toString() {
         return "Group{" +
                 "idGroup=" + idGroup +
-                ", nameGroup='" + nameGroup + '\'' +
-                ", descriptionGroup='" + descriptionGroup + '\'' +
+                ", groupName='" + groupName + '\'' +
+                ", groupDescription='" + groupDescription + '\'' +
                 ", status=" + status +
                 ", version=" + version +
                 ", txUser='" + txUser + '\'' +
@@ -106,4 +126,8 @@ public class Group {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }

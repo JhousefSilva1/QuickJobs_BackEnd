@@ -1,31 +1,62 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Documents")
 public class Documents {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Documents_Id_Documents")
     private int idDocuments;
-    private int personId;
+
+    @ManyToOne
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person", nullable = false)
+    private Person person;
+
+    @Column(name = "qj_Documents_CI_Front", nullable = false)
     private String ciFront;
+
+    @Column(name = "qj_Documents_CI_Reverse", nullable = false)
     private String ciReverse;
+
+    @Column(name = "qj_Documents_License_Front")
     private String licenseFront;
+
+    @Column(name = "qj_Document_License_Back")
     private String licenseBack;
+
+    @Column(name = "qj_Documents_Proof_Home")
     private String proofHome;
+
+    @Column(name = "qj_Documents_Police_Records")
     private String policeRecords;
+
+    @Column(name = "qj_Documents_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Documents_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Documents_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Documents_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Documents_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Documents() {
     }
 
-    // Constructor
-    public Documents(int idDocuments, int personId, String ciFront, String ciReverse, String licenseFront,
-                     String licenseBack, String proofHome, String policeRecords, boolean status, int version,
-                     String txUser, String txHost, Date txDate) {
+    public Documents(int idDocuments, Person person, String ciFront, String ciReverse, String licenseFront, String licenseBack, String proofHome, String policeRecords, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idDocuments = idDocuments;
-        this.personId = personId;
+        this.person = person;
         this.ciFront = ciFront;
         this.ciReverse = ciReverse;
         this.licenseFront = licenseFront;
@@ -39,7 +70,6 @@ public class Documents {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdDocuments() {
         return idDocuments;
     }
@@ -48,12 +78,12 @@ public class Documents {
         this.idDocuments = idDocuments;
     }
 
-    public int getPersonId() {
-        return personId;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPersonId(int personId) {
-        this.personId = personId;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getCiFront() {
@@ -148,7 +178,7 @@ public class Documents {
     public String toString() {
         return "Documents{" +
                 "idDocuments=" + idDocuments +
-                ", personId=" + personId +
+                ", person=" + person +
                 ", ciFront='" + ciFront + '\'' +
                 ", ciReverse='" + ciReverse + '\'' +
                 ", licenseFront='" + licenseFront + '\'' +
@@ -162,4 +192,8 @@ public class Documents {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }

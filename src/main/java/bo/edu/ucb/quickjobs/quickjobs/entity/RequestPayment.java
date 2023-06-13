@@ -1,23 +1,43 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+import jakarta.persistence.*;
+
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Request_qj_Payment")
 public class RequestPayment {
+    @Id
+    @Column(name = "qj_Request_qj_Payment_Id_RequestPayment")
     private int idRequestPayment;
+
+    @Column(name = "qj_Payments_qj_Payment_Id_Payment", nullable = false)
     private int idPayment;
+
+    @Column(name = "qj_Request_qj_Request_Id_Request", nullable = false)
     private int idRequest;
+
+    @Column(name = "qj_Request_qj_Payment_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Request_qj_Payment_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Request_qj_Payment_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Request_qj_Payment_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Request_qj_payment_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public RequestPayment() {
     }
 
-    // Constructor
-    public RequestPayment(int idRequestPayment, int idPayment, int idRequest, boolean status, int version,
-                          String txUser, String txHost, Date txDate) {
+    public RequestPayment(int idRequestPayment, int idPayment, int idRequest, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idRequestPayment = idRequestPayment;
         this.idPayment = idPayment;
         this.idRequest = idRequest;
@@ -28,7 +48,6 @@ public class RequestPayment {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdRequestPayment() {
         return idRequestPayment;
     }
@@ -106,4 +125,8 @@ public class RequestPayment {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }

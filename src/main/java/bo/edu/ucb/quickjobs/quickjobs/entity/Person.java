@@ -1,31 +1,63 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+import jakarta.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Person")
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Person_Id_Person")
     private int idPerson;
+
+    @Column(name = "qj_Person_Names", nullable = false)
     private String names;
+
+    @Column(name = "qj_Person_Surnames", nullable = false)
     private String surnames;
+
+    @Column(name = "qj_Person_Dni", nullable = false)
     private String dni;
+
+    @Column(name = "qj_Person_Born", nullable = false)
     private String born;
+
+    @Column(name = "qj_Person_Gender", nullable = false)
     private String gender;
+
+    @Column(name = "qj_Person_CellPhone", nullable = false)
     private String cellPhone;
+
+    @Column(name = "qj_Person_Email", nullable = false)
     private String email;
+
+    @Column(name = "qj_Person_Password", nullable = false)
     private int password;
+
+    @Column(name = "qj_Person_ImgProfile")
     private String imgProfile;
+
+    @Column(name = "qj_Person_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Person_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Person_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Person_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Person_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Person() {
     }
 
-    // Constructor
-    public Person(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone,
-                  String email, int password, String imgProfile, boolean status, int version, String txUser,
-                  String txHost, Date txDate) {
+    public Person(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, int password, String imgProfile, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idPerson = idPerson;
         this.names = names;
         this.surnames = surnames;
@@ -43,7 +75,6 @@ public class Person {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdPerson() {
         return idPerson;
     }
@@ -184,4 +215,6 @@ public class Person {
                 ", txDate=" + txDate +
                 '}';
     }
+
+
 }

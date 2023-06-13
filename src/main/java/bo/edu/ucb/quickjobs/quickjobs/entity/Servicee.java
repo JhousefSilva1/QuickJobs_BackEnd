@@ -1,28 +1,52 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Service")
 public class Servicee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Servide_Id_Service")
     private int idService;
-    private String serviceName;
-    private String description;
+
+    @Column(name = "qj_Service_Name_Service", nullable = false)
+    private String nameService;
+
+    @Column(name = "qj_Service_Description_Name_Service", nullable = false)
+    private String descriptionNameService;
+
+    @Column(name = "qj_Service_PriceHourBase", nullable = false)
     private int priceHourBase;
+
+    @Column(name = "qj_Service_ImagenIcon", nullable = false)
     private String imageIcon;
+
+    @Column(name = "qj_Service_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Service_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Service_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Service_tx_Host", nullable = false)
     private int txHost;
+
+    @Column(name = "qj_Service_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Servicee() {
     }
 
-    // Constructor
-    public Servicee(int idService, String serviceName, String description, int priceHourBase, String imageIcon,
-                    boolean status, int version, String txUser, int txHost, Date txDate) {
+    public Servicee(int idService, String nameService, String descriptionNameService, int priceHourBase, String imageIcon, boolean status, int version, String txUser, int txHost, Date txDate) {
         this.idService = idService;
-        this.serviceName = serviceName;
-        this.description = description;
+        this.nameService = nameService;
+        this.descriptionNameService = descriptionNameService;
         this.priceHourBase = priceHourBase;
         this.imageIcon = imageIcon;
         this.status = status;
@@ -32,7 +56,6 @@ public class Servicee {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdService() {
         return idService;
     }
@@ -41,20 +64,20 @@ public class Servicee {
         this.idService = idService;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getNameService() {
+        return nameService;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setNameService(String nameService) {
+        this.nameService = nameService;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionNameService() {
+        return descriptionNameService;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescriptionNameService(String descriptionNameService) {
+        this.descriptionNameService = descriptionNameService;
     }
 
     public int getPriceHourBase() {
@@ -115,10 +138,10 @@ public class Servicee {
 
     @Override
     public String toString() {
-        return "Service{" +
+        return "Servicee{" +
                 "idService=" + idService +
-                ", serviceName='" + serviceName + '\'' +
-                ", description='" + description + '\'' +
+                ", nameService='" + nameService + '\'' +
+                ", descriptionNameService='" + descriptionNameService + '\'' +
                 ", priceHourBase=" + priceHourBase +
                 ", imageIcon='" + imageIcon + '\'' +
                 ", status=" + status +
@@ -128,4 +151,10 @@ public class Servicee {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // toString() method...
+
+    // Additional methods...
 }

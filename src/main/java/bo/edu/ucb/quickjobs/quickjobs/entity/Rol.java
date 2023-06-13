@@ -1,26 +1,47 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Rol")
 public class Rol {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Rol_Id_Rol")
     private int idRol;
+
+    @Column(name = "qj_Rol_Name_Rol", nullable = false)
     private String nameRol;
-    private String description;
+
+    @Column(name = "qj_Rol_Description_Name_Rol", nullable = false)
+    private String descriptionNameRol;
+
+    @Column(name = "qj_Rol_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Rol_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Rol_tx_User", nullable = false)
     private int txUser;
+
+    @Column(name = "qj_Rol_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Rol_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Rol() {
     }
 
-    // Constructor
-    public Rol(int idRol, String nameRol, String description, boolean status, int version, int txUser, String txHost,
-               Date txDate) {
+    public Rol(int idRol, String nameRol, String descriptionNameRol, boolean status, int version, int txUser, String txHost, Date txDate) {
         this.idRol = idRol;
         this.nameRol = nameRol;
-        this.description = description;
+        this.descriptionNameRol = descriptionNameRol;
         this.status = status;
         this.version = version;
         this.txUser = txUser;
@@ -28,7 +49,6 @@ public class Rol {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdRol() {
         return idRol;
     }
@@ -45,12 +65,12 @@ public class Rol {
         this.nameRol = nameRol;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionNameRol() {
+        return descriptionNameRol;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescriptionNameRol(String descriptionNameRol) {
+        this.descriptionNameRol = descriptionNameRol;
     }
 
     public boolean isStatus() {
@@ -98,7 +118,7 @@ public class Rol {
         return "Rol{" +
                 "idRol=" + idRol +
                 ", nameRol='" + nameRol + '\'' +
-                ", description='" + description + '\'' +
+                ", descriptionNameRol='" + descriptionNameRol + '\'' +
                 ", status=" + status +
                 ", version=" + version +
                 ", txUser=" + txUser +
@@ -106,4 +126,10 @@ public class Rol {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // toString() method...
+
+    // Additional methods...
 }

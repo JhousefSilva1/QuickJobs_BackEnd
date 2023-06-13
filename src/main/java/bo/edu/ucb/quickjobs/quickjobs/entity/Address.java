@@ -1,32 +1,65 @@
 package bo.edu.ucb.quickjobs.quickjobs.entity;
 
+
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "qj_Address")
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "qj_Address_Id_Address")
     private int idAddress;
-    private int personId;
+
+    @ManyToOne
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person", nullable = false)
+    private Person person;
+
+    @Column(name = "qj_Address_City", nullable = false)
     private String city;
+
+    @Column(name = "qj_Address_Alias", nullable = false)
     private String alias;
+
+    @Column(name = "qj_Address_Avenue", nullable = false)
     private String avenue;
+
+    @Column(name = "qj_Address_Street", nullable = false)
     private String street;
+
+    @Column(name = "qj_Address_Number", nullable = false)
     private String number;
+
+    @Column(name = "qj_Address_Building", nullable = false)
     private String building;
+
+    @Column(name = "qj_Address_Apartment", nullable = false)
     private String apartment;
+
+    @Column(name = "qj_Address_Status", nullable = false)
     private boolean status;
+
+    @Column(name = "qj_Address_Version", nullable = false)
     private int version;
+
+    @Column(name = "qj_Address_tx_User", nullable = false)
     private String txUser;
+
+    @Column(name = "qj_Address_tx_Host", nullable = false)
     private String txHost;
+
+    @Column(name = "qj_Address_tx_Date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
     public Address() {
     }
 
-    // Constructor
-    public Address(int idAddress, int personId, String city, String alias, String avenue, String street,
-                   String number, String building, String apartment, boolean status, int version,
-                   String txUser, String txHost, Date txDate) {
+    public Address(int idAddress, Person person, String city, String alias, String avenue, String street, String number, String building, String apartment, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idAddress = idAddress;
-        this.personId = personId;
+        this.person = person;
         this.city = city;
         this.alias = alias;
         this.avenue = avenue;
@@ -41,7 +74,6 @@ public class Address {
         this.txDate = txDate;
     }
 
-    // Getters and Setters
     public int getIdAddress() {
         return idAddress;
     }
@@ -50,12 +82,12 @@ public class Address {
         this.idAddress = idAddress;
     }
 
-    public int getPersonId() {
-        return personId;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPersonId(int personId) {
-        this.personId = personId;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getCity() {
@@ -158,7 +190,7 @@ public class Address {
     public String toString() {
         return "Address{" +
                 "idAddress=" + idAddress +
-                ", personId=" + personId +
+                ", person=" + person +
                 ", city='" + city + '\'' +
                 ", alias='" + alias + '\'' +
                 ", avenue='" + avenue + '\'' +
@@ -173,6 +205,8 @@ public class Address {
                 ", txDate=" + txDate +
                 '}';
     }
+
+    // Constructor, getters, and setters...
+
+    // Additional methods...
 }
-
-
