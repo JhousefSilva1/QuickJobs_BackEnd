@@ -11,7 +11,7 @@ public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Group_Id_Group")
-    private int idGroup;
+    private Long  idGroup;
 
     @Column(name = "qj_Group_Name_Group", nullable = false)
     private String groupName;
@@ -38,7 +38,7 @@ public class Group {
     public Group() {
     }
 
-    public Group(int idGroup, String groupName, String groupDescription, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Group(Long  idGroup, String groupName, String groupDescription, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idGroup = idGroup;
         this.groupName = groupName;
         this.groupDescription = groupDescription;
@@ -49,11 +49,11 @@ public class Group {
         this.txDate = txDate;
     }
 
-    public int getIdGroup() {
+    public Long  getIdGroup() {
         return idGroup;
     }
 
-    public void setIdGroup(int idGroup) {
+    public void setIdGroup(Long idGroup) {
         this.idGroup = idGroup;
     }
 

@@ -11,7 +11,7 @@ public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Request_Id_Request")
-    private int idRequest;
+    private Long  idRequest;
 
     @Column(name = "qj_Person_qj_Person_Id_Person", nullable = false)
     private int personId;
@@ -52,10 +52,16 @@ public class Request {
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
+    @ManyToOne
+    @JoinColumn(name = "qj_Service_qj_Servide_Id_Service", referencedColumnName = "qj_Servide_Id_Service", insertable = false, updatable = false)
+    private Servicee servicee;
+    @ManyToOne
+    @JoinColumn(name = "qj_Address_qj_Address_Id_Address", referencedColumnName = "qj_Address_Id_Address", insertable = false, updatable = false)
+    private Address address;
     public Request() {
     }
 
-    public Request(int idRequest, int personId, int person2Id, int serviceId, int addressId, Date beginDate, Date endDate, int orderStatus, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Request(Long  idRequest, int personId, int person2Id, int serviceId, int addressId, Date beginDate, Date endDate, int orderStatus, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idRequest = idRequest;
         this.personId = personId;
         this.person2Id = person2Id;
@@ -71,11 +77,11 @@ public class Request {
         this.txDate = txDate;
     }
 
-    public int getIdRequest() {
+    public Long  getIdRequest() {
         return idRequest;
     }
 
-    public void setIdRequest(int idRequest) {
+    public void setIdRequest(Long  idRequest) {
         this.idRequest = idRequest;
     }
 

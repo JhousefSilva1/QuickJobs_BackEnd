@@ -11,7 +11,7 @@ public class Documents {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Documents_Id_Documents")
-    private int idDocuments;
+    private Long  idDocuments;
 
     @ManyToOne
     @JoinColumn(name = "qj_Person_qj_Person_Id_Person", nullable = false)
@@ -54,7 +54,7 @@ public class Documents {
     public Documents() {
     }
 
-    public Documents(int idDocuments, Person person, String ciFront, String ciReverse, String licenseFront, String licenseBack, String proofHome, String policeRecords, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Documents(Long  idDocuments, Person person, String ciFront, String ciReverse, String licenseFront, String licenseBack, String proofHome, String policeRecords, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idDocuments = idDocuments;
         this.person = person;
         this.ciFront = ciFront;
@@ -70,11 +70,11 @@ public class Documents {
         this.txDate = txDate;
     }
 
-    public int getIdDocuments() {
+    public Long  getIdDocuments() {
         return idDocuments;
     }
 
-    public void setIdDocuments(int idDocuments) {
+    public void setIdDocuments(Long  idDocuments) {
         this.idDocuments = idDocuments;
     }
 

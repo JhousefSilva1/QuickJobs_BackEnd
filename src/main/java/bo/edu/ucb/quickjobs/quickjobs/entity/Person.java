@@ -12,31 +12,31 @@ public class Person {
     @Column(name = "qj_Person_Id_Person")
     private Long idPerson;
 
-    @Column(name = "qj_Person_Names", nullable = false)
+    @Column(name = "qj_Person_Names", nullable = false, length = 500)
     private String names;
 
-    @Column(name = "qj_Person_Surnames", nullable = false)
+    @Column(name = "qj_Person_Surnames", nullable = false, length = 500)
     private String surnames;
 
-    @Column(name = "qj_Person_Dni", nullable = false)
+    @Column(name = "qj_Person_Dni", nullable = false, length = 500)
     private String dni;
 
-    @Column(name = "qj_Person_Born", nullable = false)
+    @Column(name = "qj_Person_Born", nullable = false, length = 500)
     private String born;
 
-    @Column(name = "qj_Person_Gender", nullable = false)
+    @Column(name = "qj_Person_Gender", nullable = false, length = 500)
     private String gender;
 
-    @Column(name = "qj_Person_Cellphone", nullable = false)
+    @Column(name = "qj_Person_Cellphone", nullable = false, length = 500 )
     private String cellPhone;
 
-    @Column(name = "qj_Person_Email", nullable = false)
+    @Column(name = "qj_Person_Email", nullable = false, length = 500)
     private String email;
 
-    @Column(name = "qj_Person_Password", nullable = false)
+    @Column(name = "qj_Person_Password", nullable = false, length = 500)
     private String password;
 
-    @Column(name = "qj_Person_Imgprofile")
+    @Column(name = "qj_Person_ImgProfile")
     private String imgProfile;
 
     @Column(name = "qj_Person_Status", nullable = false)
@@ -54,6 +54,11 @@ public class Person {
     @Column(name = "qj_Person_tx_Date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
+
+    //
+
+
+
 
     public Person() {
     }

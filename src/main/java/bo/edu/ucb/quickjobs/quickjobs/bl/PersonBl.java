@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonBl {
 
-    private PersonRepository personRepository;
-
-    @Autowired
-    public PersonBl(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
-
+//    private PersonRepository personRepository;
+//
+//    @Autowired
+//    public PersonBl(PersonRepository personRepository) {
+//        this.personRepository = personRepository;
+//    }
+//
 //    public void createPerson(PersonDTO personDTO){
 //
 //        Person person = new Person();
@@ -42,10 +42,10 @@ public class PersonBl {
 ////        personRepository.save(person);
 //        this.personRepository.save(person);
 //    }
-
-    public Person findByEmail(String email){
-        return personRepository.findByEmail(email);
-    }
-
+//
+//    public Person findByEmail(String email){
+//        return personRepository.findByEmail(email);
+//    }
+//
 
 }

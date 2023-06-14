@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/persons")
 @CrossOrigin(origins = "*")
 public class AuthApi {
-    private SecurityBl securityBl;
-
-    public AuthApi (SecurityBl securityBl){
-        this.securityBl=securityBl;
-    }
-
-    @GetMapping("/{personId}")
-    public PersonDTO test(@PathVariable(name = "personId")Long  personId){
-        return this.securityBl.getPersonByPk(personId);
-    }
-
-    @PostMapping()
-    public AuthResDTO authentication(@RequestBody AuthReqDTO authReqDto) {
-        return securityBl.authenticate(authReqDto);
-    }
+//    private SecurityBl securityBl;
+//
+//    public AuthApi (SecurityBl securityBl){
+//        this.securityBl=securityBl;
+//    }
+//
+//    @GetMapping("/{IdPerson}")
+//    public PersonDTO test(@PathVariable(name = "IdPerson")Long  IdPerson){
+//        return this.securityBl.getPersonByPk(IdPerson);
+//    }
+//
+//    @PostMapping()
+//    public AuthResDTO authentication(@RequestBody AuthReqDTO authReqDto) {
+//        return securityBl.authenticate(authReqDto);
+//    }
 
 
 }

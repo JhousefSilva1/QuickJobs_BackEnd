@@ -10,7 +10,7 @@ import java.util.Date;
 public class RequestPayment {
     @Id
     @Column(name = "qj_Request_qj_Payment_Id_RequestPayment")
-    private int idRequestPayment;
+    private Long  idRequestPayment;
 
     @Column(name = "qj_Payments_qj_Payment_Id_Payment", nullable = false)
     private int idPayment;
@@ -34,10 +34,14 @@ public class RequestPayment {
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
+    @ManyToOne
+    @JoinColumn(name = "qj_Payments_qj_Payment_Id_Payment", referencedColumnName = "qj_Payment_Id_Payment", insertable = false, updatable = false)
+    private RequestPayment requestPayment;
+
     public RequestPayment() {
     }
 
-    public RequestPayment(int idRequestPayment, int idPayment, int idRequest, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public RequestPayment(Long  idRequestPayment, int idPayment, int idRequest, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idRequestPayment = idRequestPayment;
         this.idPayment = idPayment;
         this.idRequest = idRequest;
@@ -48,11 +52,11 @@ public class RequestPayment {
         this.txDate = txDate;
     }
 
-    public int getIdRequestPayment() {
+    public Long  getIdRequestPayment() {
         return idRequestPayment;
     }
 
-    public void setIdRequestPayment(int idRequestPayment) {
+    public void setIdRequestPayment(Long  idRequestPayment) {
         this.idRequestPayment = idRequestPayment;
     }
 

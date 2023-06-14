@@ -11,7 +11,7 @@ public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Rol_Id_Rol")
-    private int idRol;
+    private Long  idRol;
 
     @Column(name = "qj_Rol_Name_Rol", nullable = false)
     private String nameRol;
@@ -35,10 +35,12 @@ public class Rol {
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
+
+
     public Rol() {
     }
 
-    public Rol(int idRol, String nameRol, String descriptionNameRol, boolean status, int version, int txUser, String txHost, Date txDate) {
+    public Rol(Long  idRol, String nameRol, String descriptionNameRol, boolean status, int version, int txUser, String txHost, Date txDate) {
         this.idRol = idRol;
         this.nameRol = nameRol;
         this.descriptionNameRol = descriptionNameRol;
@@ -49,11 +51,11 @@ public class Rol {
         this.txDate = txDate;
     }
 
-    public int getIdRol() {
+    public Long  getIdRol() {
         return idRol;
     }
 
-    public void setIdRol(int idRol) {
+    public void setIdRol(Long  idRol) {
         this.idRol = idRol;
     }
 

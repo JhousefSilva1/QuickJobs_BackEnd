@@ -11,7 +11,7 @@ public class GroupPerson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Group_qj_Person_GroupPerson")
-    private int groupPersonId;
+    private Long groupPersonId;
 
     @Column(name = "qj_Group_qj_Group_Id_Group", nullable = false)
     private int groupId;
@@ -35,10 +35,21 @@ public class GroupPerson {
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
+    //
+
+    @ManyToOne
+    @JoinColumn(name = "qj_Group_qj_Group_Id_Group", referencedColumnName = "qj_Group_Id_Group", insertable = false,updatable = false)
+    private Person person;
+
+    @ManyToOne
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person", referencedColumnName = "qj_Person_Id_Person", insertable = false,updatable = false)
+    private Group group;
+
+
     public GroupPerson() {
     }
 
-    public GroupPerson(int groupPersonId, int groupId, int personId, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public GroupPerson(Long  groupPersonId, int groupId, int personId, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.groupPersonId = groupPersonId;
         this.groupId = groupId;
         this.personId = personId;
@@ -49,11 +60,11 @@ public class GroupPerson {
         this.txDate = txDate;
     }
 
-    public int getGroupPersonId() {
+    public Long  getGroupPersonId() {
         return groupPersonId;
     }
 
-    public void setGroupPersonId(int groupPersonId) {
+    public void setGroupPersonId(Long  groupPersonId) {
         this.groupPersonId = groupPersonId;
     }
 
@@ -127,8 +138,7 @@ public class GroupPerson {
                 '}';
     }
 
-
-// Constructor, getters, and setters...
+    // Constructor, getters, and setters...
 
     // Additional methods...
 }

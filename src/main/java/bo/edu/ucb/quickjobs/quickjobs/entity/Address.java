@@ -11,10 +11,10 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Address_Id_Address")
-    private int idAddress;
+    private Long  idAddress;
 
     @ManyToOne
-    @JoinColumn(name = "qj_Person_qj_Person_Id_Person", nullable = false)
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person", referencedColumnName = "qj_Person_Id_Person", insertable = false, updatable = false)
     private Person person;
 
     @Column(name = "qj_Address_City", nullable = false)
@@ -54,10 +54,12 @@ public class Address {
     @Temporal(TemporalType.TIMESTAMP)
     private Date txDate;
 
+
+
     public Address() {
     }
 
-    public Address(int idAddress, Person person, String city, String alias, String avenue, String street, String number, String building, String apartment, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Address(Long  idAddress, Person person, String city, String alias, String avenue, String street, String number, String building, String apartment, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idAddress = idAddress;
         this.person = person;
         this.city = city;
@@ -74,11 +76,11 @@ public class Address {
         this.txDate = txDate;
     }
 
-    public int getIdAddress() {
+    public Long  getIdAddress() {
         return idAddress;
     }
 
-    public void setIdAddress(int idAddress) {
+    public void setIdAddress(Long  idAddress) {
         this.idAddress = idAddress;
     }
 

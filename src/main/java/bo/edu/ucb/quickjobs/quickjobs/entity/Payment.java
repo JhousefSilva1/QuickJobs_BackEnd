@@ -11,7 +11,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Payment_Id_Payment")
-    private int idPayment;
+    private Long idPayment;
 
     @Column(name = "qj_Payment_Name_Payment", nullable = false)
     private String namePayment;
@@ -35,7 +35,7 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(int idPayment, String namePayment, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Payment(Long  idPayment, String namePayment, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idPayment = idPayment;
         this.namePayment = namePayment;
         this.status = status;
@@ -45,11 +45,11 @@ public class Payment {
         this.txDate = txDate;
     }
 
-    public int getIdPayment() {
+    public Long  getIdPayment() {
         return idPayment;
     }
 
-    public void setIdPayment(int idPayment) {
+    public void setIdPayment(Long  idPayment) {
         this.idPayment = idPayment;
     }
 

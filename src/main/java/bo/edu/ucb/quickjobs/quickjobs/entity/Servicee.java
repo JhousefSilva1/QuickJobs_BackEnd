@@ -10,7 +10,7 @@ public class Servicee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Servide_Id_Service")
-    private int idService;
+    private Long  idService;
 
     @Column(name = "qj_Service_Name_Service", nullable = false)
     private String nameService;
@@ -43,7 +43,7 @@ public class Servicee {
     public Servicee() {
     }
 
-    public Servicee(int idService, String nameService, String descriptionNameService, int priceHourBase, String imageIcon, boolean status, int version, String txUser, int txHost, Date txDate) {
+    public Servicee(Long  idService, String nameService, String descriptionNameService, int priceHourBase, String imageIcon, boolean status, int version, String txUser, int txHost, Date txDate) {
         this.idService = idService;
         this.nameService = nameService;
         this.descriptionNameService = descriptionNameService;
@@ -56,11 +56,11 @@ public class Servicee {
         this.txDate = txDate;
     }
 
-    public int getIdService() {
+    public Long  getIdService() {
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(Long  idService) {
         this.idService = idService;
     }
 
