@@ -221,7 +221,20 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(idPerson, person.idPerson) && Objects.equals(email, person.email) && Objects.equals(names, person.names) && Objects.equals(surnames, person.surnames) && Objects.equals(password, person.password) && Objects.equals(cellPhone, person.cellPhone) && Objects.equals(status, person.status) && Objects.equals(txDate, person.txDate) && Objects.equals(txUser, person.txUser) && Objects.equals(txHost, person.txHost);
+        return Objects.equals(idPerson, person.idPerson) &&
+                Objects.equals(email, person.email) &&
+                Objects.equals(names, person.names) &&
+                Objects.equals(surnames, person.surnames) &&
+                Objects.equals(password, person.password) &&
+                Objects.equals(cellPhone, person.cellPhone) &&
+                Objects.equals(imgProfile, person.imgProfile)&&
+                Objects.equals(dni, person.dni) &&
+                Objects.equals(version, person.version) &&
+                Objects.equals(born, person.born) &&
+                Objects.equals(status, person.status) &&
+                Objects.equals(txDate, person.txDate) &&
+                Objects.equals(txUser, person.txUser) &&
+                Objects.equals(txHost, person.txHost);
     }
 
     @Override

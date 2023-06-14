@@ -23,23 +23,23 @@ public class PersonApi {
         this.securityBl = securityBl;
     }
 
-    @PostMapping
-    public Map createPerson(@RequestHeader Map<String,String> headers, @RequestBody PersonDTO personDTO){
-        System.out.println("Headers:"+ headers);
-        if (headers.get("authorization")==null && headers.get("Authorization")==null ){
-            return Map.of("message", "No se ha enviado el token de authorization");
-        }
-        String jwt = "";
-        if (headers.get("Authorization") != null){
-            jwt = headers.get("Authorization").split("")[1];
-        }
-        else {
-            jwt = headers.get("authorization").split("")[1];
-        }
-        System.out.println("El token es:"+ jwt);
-        personBl.createPerson(personDTO);
-        return  Map.of("message","User created");
-    }
+//    @PostMapping
+//    public Map createPerson(@RequestHeader Map<String,String> headers, @RequestBody PersonDTO personDTO){
+//        System.out.println("Headers:"+ headers);
+//        if (headers.get("authorization")==null && headers.get("Authorization")==null ){
+//            return Map.of("message", "No se ha enviado el token de authorization");
+//        }
+//        String jwt = "";
+//        if (headers.get("Authorization") != null){
+//            jwt = headers.get("Authorization").split("")[1];
+//        }
+//        else {
+//            jwt = headers.get("authorization").split("")[1];
+//        }
+//        System.out.println("El token es:"+ jwt);
+//        personBl.createPerson(personDTO);
+//        return  Map.of("message","User created");
+//    }
         /*
 
     @PostMapping

@@ -9,10 +9,12 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
 
 
-    Person findByPrimarykey(Long personId);
+    Person findByIdPerson(Long idPerson);
 
-    Person findByPasswordByEmail(String email);
+    String findByPasswordOrderByEmail(String email);
 
 
     Person findByEmail(String email);
+    void createPerson(Person person);
+
 }

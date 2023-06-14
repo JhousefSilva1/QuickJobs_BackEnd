@@ -29,9 +29,9 @@ public class SecurityBl {
         this.rolRepository = rolRepository;
     }
 
-    public PersonDTO getPersonByPk(Long personId) {
+    public PersonDTO getPersonByPk(Long idPerson) {
 
-        Person person = personRepository.findByPrimarykey(personId);
+        Person person = personRepository.findByIdPerson(idPerson);
         //
         //
         PersonDTO personDTO = new PersonDTO();
@@ -44,7 +44,8 @@ public class SecurityBl {
     public AuthResDTO authenticate(AuthReqDTO credentials) {
         AuthResDTO result = new AuthResDTO();
         System.out.println("Comenzando proceso de autenticacion con:"+credentials);
-        String currentPasswordInBCrypt = String.valueOf(personRepository.findByPasswordByEmail(credentials.email()));
+        String currentPasswordInBCrypt = personRepository.findByPasswordOrderByEmail(credentials.email());
+
         System.out.println("Se obtuvo la siguiente contraseña de bbdd: " + currentPasswordInBCrypt);
         //currentPasswordInBCrypt.equals(credentials.password())
         if (currentPasswordInBCrypt != null){

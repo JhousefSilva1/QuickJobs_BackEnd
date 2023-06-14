@@ -5,7 +5,7 @@ package bo.edu.ucb.quickjobs.quickjobs.dto;
 import java.util.Date;
 
 public class PersonDTO {
-    private int idPerson;
+    private Long idPerson;
     private String names;
     private String surnames;
     private String dni;
@@ -20,7 +20,7 @@ public class PersonDTO {
     public PersonDTO() {
     }
 
-    public PersonDTO(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile) {
+    public PersonDTO(Long idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile) {
         this.idPerson = idPerson;
         this.names = names;
         this.surnames = surnames;
@@ -33,11 +33,11 @@ public class PersonDTO {
         this.imgProfile = imgProfile;
     }
 
-    public int getIdPerson() {
+    public Long getIdPerson() {
         return idPerson;
     }
 
-    public void setIdPerson(int idPerson) {
+    public void setIdPerson(Long idPerson) {
         this.idPerson = idPerson;
     }
 
