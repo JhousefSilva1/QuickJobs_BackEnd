@@ -2,6 +2,7 @@ package bo.edu.ucb.quickjobs.quickjobs.entity;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "qj_Person")
@@ -9,7 +10,7 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "qj_Person_Id_Person")
-    private int idPerson;
+    private Long idPerson;
 
     @Column(name = "qj_Person_Names", nullable = false)
     private String names;
@@ -57,7 +58,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(int idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile, boolean status, int version, String txUser, String txHost, Date txDate) {
+    public Person(Long idPerson, String names, String surnames, String dni, String born, String gender, String cellPhone, String email, String password, String imgProfile, boolean status, int version, String txUser, String txHost, Date txDate) {
         this.idPerson = idPerson;
         this.names = names;
         this.surnames = surnames;
@@ -75,11 +76,11 @@ public class Person {
         this.txDate = txDate;
     }
 
-    public int getIdPerson() {
+    public Long getIdPerson() {
         return idPerson;
     }
 
-    public void setIdPerson(int idPerson) {
+    public void setIdPerson(Long idPerson) {
         this.idPerson = idPerson;
     }
 
@@ -215,6 +216,17 @@ public class Person {
                 ", txDate=" + txDate +
                 '}';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(idPerson, person.idPerson) && Objects.equals(email, person.email) && Objects.equals(names, person.names) && Objects.equals(surnames, person.surnames) && Objects.equals(password, person.password) && Objects.equals(cellPhone, person.cellPhone) && Objects.equals(status, person.status) && Objects.equals(txDate, person.txDate) && Objects.equals(txUser, person.txUser) && Objects.equals(txHost, person.txHost);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(idPerson, email, names, surnames, password, cellPhone, status, txDate, txUser, txHost);
+    }
 
 }

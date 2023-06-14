@@ -7,16 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonService {
+public class PersonBl {
 
-    private final PersonRepository personRepository;
+    private PersonRepository personRepository;
 
     @Autowired
-    public PersonService(PersonRepository personRepository) {
+    public PersonBl(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
-    public Person createPerson(PersonDTO personDTO) {
+    public void createPerson(PersonDTO personDTO){
+
         Person person = new Person();
         // Set the person properties from the DTO
         person.setNames(personDTO.getNames());
@@ -32,6 +33,13 @@ public class PersonService {
         person.setVersion(1);
 
         // Save the person entity in the repository
-        return personRepository.save(person);
+        personRepository.save(person);
+
     }
+
+    public Person findByEmail(String email){
+        return personRepository.findByEmail(email);
+    }
+
+
 }

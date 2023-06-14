@@ -1,18 +1,9 @@
-### Registro de una nueva persona ###
-
-
-POST http://localhost:8080/api/persons
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+### Autenticacion correcta
+POST http://localhost:7777/api/v1/auth/
 Content-Type: application/json
+Accept: application/json
 
 {
-  "names": "John",
-  "surnames": "Doe",
-  "dni": "123456789",
-  "born": "1990-01-01",
-  "gender": "Male",
-  "cellphone": "1234567890",
-  "email": "johndoe@example.com",
-  "password": "secretpassword",
-  "imgProfile": "https://example.com/profile.jpg"
+  "username": "jose.pozo@ucb.edu.bo",
+  "password": "admin"
 }
