@@ -10,9 +10,10 @@ import bo.edu.ucb.quickjobs.quickjobs.entity.Person;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
-
+@Service
 public class SecurityBl {
 
     public final static String JWT_SECRET = "quickjobs";
