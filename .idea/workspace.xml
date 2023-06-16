@@ -7,12 +7,8 @@
     <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/quickJobs_db_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/quickJobs_db_create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http/person.http" beforeDir="false" afterPath="$PROJECT_DIR$/http/person.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PersonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PersonEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +135,7 @@
       <workItem from="1686716400136" duration="8464000" />
       <workItem from="1686758927674" duration="3453000" />
       <workItem from="1686798838078" duration="8214000" />
-      <workItem from="1686846562723" duration="15940000" />
+      <workItem from="1686846562723" duration="18022000" />
     </task>
     <servers />
   </component>

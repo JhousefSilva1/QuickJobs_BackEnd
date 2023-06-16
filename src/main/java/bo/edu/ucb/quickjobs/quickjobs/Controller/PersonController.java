@@ -33,7 +33,27 @@ public class PersonController {
 
     @PostMapping
     public ResponseEntity<PersonEntity> add(@RequestBody PersonEntity person){//el @RequestBody es para que el objeto que se le pasa por el body se guarde en la variable personEntity
-        return ResponseEntity.ok(this.personService.save(person));
+           //valida si el id de la persona es nulo o si existe en la base de datos, si existe retorna un badRequest
+            // si no existe retorna un ok, y se guarda la persona
+        if(person.getIdPerson()== null || !this.personService.exists(person.getIdPerson())){
+               return ResponseEntity.ok(this.personService.save(person));
+           }
+        //return ResponseEntity.ok(this.personService.save(person));
+        else {
+               return ResponseEntity.badRequest().build();
+           }
+    }
+
+    @PutMapping
+    public ResponseEntity<PersonEntity> update(@RequestBody PersonEntity person){//el @RequestBody es para que el objeto que se le pasa por el body se actualice en la variable personEntity
+
+        if(person.getIdPerson()!= null || this.personService.exists(person.getIdPerson())){
+            return ResponseEntity.ok(this.personService.save(person));
+        }
+        //return ResponseEntity.ok(this.personService.save(person));
+        else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
 }

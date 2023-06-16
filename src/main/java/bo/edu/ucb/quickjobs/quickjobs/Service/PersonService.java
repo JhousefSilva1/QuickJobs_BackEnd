@@ -28,5 +28,9 @@ public class PersonService {
         return this.personRepository.save(person);
     }
 
+    public boolean exists(Long PersonId){
+        return this.personRepository.existsById(PersonId);
+    }
+
 
 }

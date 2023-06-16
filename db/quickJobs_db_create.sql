@@ -17,7 +17,7 @@ CREATE TABLE H_qj_Address (
     qj_Address_Version int  NOT NULL,
     qj_Address_tx_User varchar(500)  NOT NULL,
     qj_Address_tx_Host varchar(500)  NOT NULL,
-    qj_Address_tx_Date timestamp  NOT NULL,
+    qj_Address_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Address_pk PRIMARY KEY (qj_Address_Id_Address)
 );
 
@@ -35,7 +35,7 @@ CREATE TABLE H_qj_Documents (
     qj_Documents_Version int  NOT NULL,
     qj_Documents_tx_User varchar(500)  NOT NULL,
     qj_Documents_tx_Host varchar(500)  NOT NULL,
-    qj_Documnets_tx_Date timestamp  NOT NULL,
+    qj_Documnets_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Documents_pk PRIMARY KEY (qj_Documents_Id_Documents)
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE H_qj_Group (
     qj_Group_Version int  NOT NULL,
     qj_Group_tx_User varchar(500)  NOT NULL,
     qj_Group_tx_Host varchar(500)  NOT NULL,
-    qj_Group_tx_Date timestamp  NOT NULL,
+    qj_Group_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Group_pk PRIMARY KEY (qj_Group_Id_Group)
 );
 
@@ -61,7 +61,7 @@ CREATE TABLE H_qj_Group_qj_Person (
     qj_Group_qj_Person_Version int  NOT NULL,
     qj_Group_qj_Person_tx_User varchar(500)  NOT NULL,
     qj_Group_qj_Person_tx_Host varchar(500)  NOT NULL,
-    qj_Group_qj_Person_tx_Date timestamp  NOT NULL,
+    qj_Group_qj_Person_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Group_qj_Person_pk PRIMARY KEY (qj_Group_qj_Person_GroupPerson)
 );
 
@@ -74,7 +74,7 @@ CREATE TABLE H_qj_Group_qj_Rol (
     qj_Group_qj_Rol_Version int  NOT NULL,
     qj_Group_qj_Rol_tx_User varchar(500)  NOT NULL,
     qj_Group_qj_Rol_tx_Host varchar(500)  NOT NULL,
-    qj_Group_qj_Rol_tx_Date timestamp  NOT NULL,
+    qj_Group_qj_Rol_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Group_qj_Rol_pk PRIMARY KEY (qj_Group_qj_Rol_Id_GroupRol)
 );
 
@@ -86,7 +86,7 @@ CREATE TABLE H_qj_Payments (
     qj_Payment_Version int  NOT NULL,
     qj_Payment_tx_User varchar(500)  NOT NULL,
     qj_Payment_tx_Host varchar(500)  NOT NULL,
-    qj_Payment_tx_Date timestamp  NOT NULL,
+    qj_Payment_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Payments_pk PRIMARY KEY (qj_Payment_Id_Payment)
 );
 
@@ -106,7 +106,7 @@ CREATE TABLE H_qj_Person (
     qj_Person_Version int  NOT NULL,
     qj_Person_tx_User varchar(500)  NOT NULL,
     qj_Person_tx_Host varchar(500)  NOT NULL,
-    qj_Person_tx_Date timestamp  NOT NULL,
+    qj_Person_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Person_pk PRIMARY KEY (qj_Person_Id_Person)
 );
 
@@ -117,14 +117,14 @@ CREATE TABLE H_qj_Request (
     qj_Person_2_qj_Person_Id_Person int  NOT NULL,
     qj_Service_qj_Servide_Id_Service int  NOT NULL,
     qj_Address_qj_Address_Id_Address int  NOT NULL,
-    qj_Request_Begin_Date timestamp  NOT NULL,
-    qj_Request_End_Date timestamp  NOT NULL,
+    qj_Request_Begin_Date varchar(500)  NOT NULL,
+    qj_Request_End_Date varchar(500)  NOT NULL,
     qj_Request_Order_Status int  NOT NULL,
     qj_Request_Status boolean  NOT NULL,
     qj_Request_Version int  NOT NULL,
     qj_Request_tx_User varchar(500)  NOT NULL,
     qj_Request_tx_Host varchar(500)  NOT NULL,
-    qj_Request_tx_Date timestamp  NOT NULL,
+    qj_Request_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Request_pk PRIMARY KEY (qj_Request_Id_Request)
 );
 
@@ -137,7 +137,7 @@ CREATE TABLE H_qj_Request_qj_Payment (
     qj_Request_qj_Payment_Version int  NOT NULL,
     qj_Request_qj_Payment_tx_User varchar(500)  NOT NULL,
     qj_Request_qj_Payment_tx_Host varchar(500)  NOT NULL,
-    qj_Request_qj_payment_tx_Date timestamp  NOT NULL,
+    qj_Request_qj_payment_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Request_qj_Payment_pk PRIMARY KEY (qj_Request_qj_Payment_Id_RequestPayment)
 );
 
@@ -148,9 +148,9 @@ CREATE TABLE H_qj_Rol (
     qj_Rol_Description_Name_Rol varchar(500)  NOT NULL,
     qj_Rol_Status boolean  NOT NULL,
     qj_Rol_Version int  NOT NULL,
-    qj_Rol_tx_User int  NOT NULL,
+    qj_Rol_tx_User varchar(500)  NOT NULL,
     qj_Rol_tx_Host varchar(500)  NOT NULL,
-    qj_Rol_tx_Date timestamp  NOT NULL,
+    qj_Rol_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Rol_pk PRIMARY KEY (qj_Rol_Id_Rol)
 );
 
@@ -159,13 +159,13 @@ CREATE TABLE H_qj_Service (
     qj_Servide_Id_Service serial  NOT NULL,
     qj_Service_Name_Service varchar(500)  NOT NULL,
     qj_Service_Description_Name_Service varchar(500)  NOT NULL,
-    qj_Service_PriceHourBase int  NOT NULL,
+    qj_Service_PriceHourBase varchar(500)  NOT NULL,
     qj_Service_ImagenIcon varchar(500)  NOT NULL,
     qj_Service_Status boolean  NOT NULL,
     qj_Service_Version int  NOT NULL,
     qj_Service_tx_User varchar(500)  NOT NULL,
-    qj_Service_tx_Host int  NOT NULL,
-    qj_Service_tx_Date timestamp  NOT NULL,
+    qj_Service_tx_Host varchar(500)  NOT NULL,
+    qj_Service_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT H_qj_Service_pk PRIMARY KEY (qj_Servide_Id_Service)
 );
 
@@ -184,7 +184,7 @@ CREATE TABLE qj_Address (
     qj_Address_Version int  NOT NULL,
     qj_Address_tx_User varchar(500)  NOT NULL,
     qj_Address_tx_Host varchar(500)  NOT NULL,
-    qj_Address_tx_Date timestamp  NOT NULL,
+    qj_Address_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Address_pk PRIMARY KEY (qj_Address_Id_Address)
 );
 
@@ -202,7 +202,7 @@ CREATE TABLE qj_Documents (
     qj_Documents_Version int  NOT NULL,
     qj_Documents_tx_User varchar(500)  NOT NULL,
     qj_Documents_tx_Host varchar(500)  NOT NULL,
-    qj_Documnets_tx_Date timestamp  NOT NULL,
+    qj_Documnets_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Documents_pk PRIMARY KEY (qj_Documents_Id_Documents)
 );
 
@@ -215,7 +215,7 @@ CREATE TABLE qj_Group (
     qj_Group_Version int  NOT NULL,
     qj_Group_tx_User varchar(500)  NOT NULL,
     qj_Group_tx_Host varchar(500)  NOT NULL,
-    qj_Group_tx_Date timestamp  NOT NULL,
+    qj_Group_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Group_pk PRIMARY KEY (qj_Group_Id_Group)
 );
 
@@ -228,7 +228,7 @@ CREATE TABLE qj_Group_qj_Person (
     qj_Group_qj_Person_Version int  NOT NULL,
     qj_Group_qj_Person_tx_User varchar(500)  NOT NULL,
     qj_Group_qj_Person_tx_Host varchar(500)  NOT NULL,
-    qj_Group_qj_Person_tx_Date varchar  NOT NULL,
+    qj_Group_qj_Person_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Group_qj_Person_pk PRIMARY KEY (qj_Group_qj_Person_GroupPerson)
 );
 
@@ -241,7 +241,7 @@ CREATE TABLE qj_Group_qj_Rol (
     qj_Group_qj_Rol_Version int  NOT NULL,
     qj_Group_qj_Rol_tx_User varchar(500)  NOT NULL,
     qj_Group_qj_Rol_tx_Host varchar(500)  NOT NULL,
-    qj_Group_qj_Rol_tx_Date timestamp  NOT NULL,
+    qj_Group_qj_Rol_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Group_qj_Rol_pk PRIMARY KEY (qj_Group_qj_Rol_Id_GroupRol)
 );
 
@@ -253,7 +253,7 @@ CREATE TABLE qj_Payments (
     qj_Payment_Version int  NOT NULL,
     qj_Payment_tx_User varchar(500)  NOT NULL,
     qj_Payment_tx_Host varchar(500)  NOT NULL,
-    qj_Payment_tx_Date timestamp  NOT NULL,
+    qj_Payment_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Payments_pk PRIMARY KEY (qj_Payment_Id_Payment)
 );
 
@@ -284,14 +284,14 @@ CREATE TABLE qj_Request (
     qj_Person_2_qj_Person_Id_Person int  NOT NULL,
     qj_Service_qj_Servide_Id_Service int  NOT NULL,
     qj_Address_qj_Address_Id_Address int  NOT NULL,
-    qj_Request_Begin_Date timestamp  NOT NULL,
-    qj_Request_End_Date timestamp  NOT NULL,
+    qj_Request_Begin_Date varchar(500)  NOT NULL,
+    qj_Request_End_Date varchar(500)  NOT NULL,
     qj_Request_Order_Status int  NOT NULL,
     qj_Request_Status boolean  NOT NULL,
     qj_Request_Version int  NOT NULL,
     qj_Request_tx_User varchar(500)  NOT NULL,
     qj_Request_tx_Host varchar(500)  NOT NULL,
-    qj_Request_tx_Date timestamp  NOT NULL,
+    qj_Request_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Request_pk PRIMARY KEY (qj_Request_Id_Request)
 );
 
@@ -304,7 +304,7 @@ CREATE TABLE qj_Request_qj_Payment (
     qj_Request_qj_Payment_Version int  NOT NULL,
     qj_Request_qj_Payment_tx_User varchar(500)  NOT NULL,
     qj_Request_qj_Payment_tx_Host varchar(500)  NOT NULL,
-    qj_Request_qj_payment_tx_Date timestamp  NOT NULL,
+    qj_Request_qj_payment_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Request_qj_Payment_pk PRIMARY KEY (qj_Request_qj_Payment_Id_RequestPayment)
 );
 
@@ -317,7 +317,7 @@ CREATE TABLE qj_Rol (
     qj_Rol_Version int  NOT NULL,
     qj_Rol_tx_User int  NOT NULL,
     qj_Rol_tx_Host varchar(500)  NOT NULL,
-    qj_Rol_tx_Date timestamp  NOT NULL,
+    qj_Rol_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Rol_pk PRIMARY KEY (qj_Rol_Id_Rol)
 );
 
@@ -326,13 +326,13 @@ CREATE TABLE qj_Service (
     qj_Servide_Id_Service serial  NOT NULL,
     qj_Service_Name_Service varchar(500)  NOT NULL,
     qj_Service_Description_Name_Service varchar(500)  NOT NULL,
-    qj_Service_PriceHourBase int  NOT NULL,
+    qj_Service_PriceHourBase varchar(500)  NOT NULL,
     qj_Service_ImagenIcon varchar(500)  NOT NULL,
     qj_Service_Status boolean  NOT NULL,
     qj_Service_Version int  NOT NULL,
     qj_Service_tx_User varchar(500)  NOT NULL,
-    qj_Service_tx_Host int  NOT NULL,
-    qj_Service_tx_Date timestamp  NOT NULL,
+    qj_Service_tx_Host varchar(500)  NOT NULL,
+    qj_Service_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Service_pk PRIMARY KEY (qj_Servide_Id_Service)
 );
 
