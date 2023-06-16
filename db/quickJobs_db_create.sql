@@ -228,7 +228,7 @@ CREATE TABLE qj_Group_qj_Person (
     qj_Group_qj_Person_Version int  NOT NULL,
     qj_Group_qj_Person_tx_User varchar(500)  NOT NULL,
     qj_Group_qj_Person_tx_Host varchar(500)  NOT NULL,
-    qj_Group_qj_Person_tx_Date timestamp  NOT NULL,
+    qj_Group_qj_Person_tx_Date varchar  NOT NULL,
     CONSTRAINT qj_Group_qj_Person_pk PRIMARY KEY (qj_Group_qj_Person_GroupPerson)
 );
 
