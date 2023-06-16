@@ -5,60 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db/datas/qj_Address.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/datas/qj_Group_qj_Person.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/datas/qj_Person.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/dao/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/PersonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/quickJobs_db_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/quickJobs_db_create.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http/person.http" beforeDir="false" afterPath="$PROJECT_DIR$/http/person.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/QuickjobsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/QuickjobsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/api/AuthApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/api/PersonApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/bl/PersonBl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/bl/SecurityBl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/AddressRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/DocumentsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/GroupPersonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/GroupRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/GroupRolRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/PaymentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/PersonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/RequestPaymentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/RequestRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/RolRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dao/ServiceeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/AddressDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/AuthReqDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/AuthResDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/DocumentsDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/GroupDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/GroupPersonDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/GroupRolDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/PaymentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/PersonDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/RequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/RequestPaymentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/ResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/RolDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/dto/ServiceeDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/AddressEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Documents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/DocumentsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/GroupEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/GroupPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/GroupPersonEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/GroupRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/GroupRolEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PaymentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PersonEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/RequestEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/RequestPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/RequestPaymentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/RolEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/entity/Servicee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/ServiceeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/util/AuthUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/util/QuickJobsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PersonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/PersonEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +139,7 @@
       <workItem from="1686716400136" duration="8464000" />
       <workItem from="1686758927674" duration="3453000" />
       <workItem from="1686798838078" duration="8214000" />
-      <workItem from="1686846562723" duration="10514000" />
+      <workItem from="1686846562723" duration="15940000" />
     </task>
     <servers />
   </component>

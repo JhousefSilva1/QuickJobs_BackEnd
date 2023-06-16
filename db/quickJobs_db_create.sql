@@ -267,13 +267,13 @@ CREATE TABLE qj_Person (
     qj_Person_Gender varchar(500)  NOT NULL,
     qj_Person_CellPhone varchar(500)  NOT NULL,
     qj_Person_Email varchar(500)  NOT NULL,
-    qj_Person_Password int  NOT NULL,
+    qj_Person_Password varchar(500)  NOT NULL,
     qj_Person_ImgProfile varchar(500)  NULL,
     qj_Person_Status boolean  NOT NULL,
     qj_Person_Version int  NOT NULL,
     qj_Person_tx_User varchar(500)  NOT NULL,
     qj_Person_tx_Host varchar(500)  NOT NULL,
-    qj_Person_tx_Date timestamp  NOT NULL,
+    qj_Person_tx_Date varchar(500)  NOT NULL,
     CONSTRAINT qj_Person_pk PRIMARY KEY (qj_Person_Id_Person)
 );
 

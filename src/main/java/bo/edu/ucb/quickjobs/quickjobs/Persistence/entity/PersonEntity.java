@@ -13,28 +13,28 @@ public class PersonEntity {
     @Column(name = "qj_Person_Id_Person")
     private Long idPerson;
 
-    @Column(name = "qj_Person_Names", nullable = false, length = 500)
+    @Column(name = "qj_Person_Names", nullable = false)
     private String names;
 
-    @Column(name = "qj_Person_Surnames", nullable = false, length = 500)
+    @Column(name = "qj_Person_Surnames", nullable = false)
     private String surnames;
 
-    @Column(name = "qj_Person_Dni", nullable = false, length = 500)
+    @Column(name = "qj_Person_Dni", nullable = false)
     private String dni;
 
-    @Column(name = "qj_Person_Born", nullable = false, length = 500)
+    @Column(name = "qj_Person_Born", nullable = false)
     private String born;
 
-    @Column(name = "qj_Person_Gender", nullable = false, length = 500)
+    @Column(name = "qj_Person_Gender", nullable = false)
     private String gender;
 
-    @Column(name = "qj_Person_Cellphone", nullable = false, length = 500 )
+    @Column(name = "qj_Person_Cellphone", nullable = false )
     private String cellPhone;
 
-    @Column(name = "qj_Person_Email", nullable = false, length = 500)
+    @Column(name = "qj_Person_Email", nullable = false)
     private String email;
 
-    @Column(name = "qj_Person_Password", nullable = false, length = 500)
+    @Column(name = "qj_Person_Password", nullable = false)
     private String password;
 
     @Column(name = "qj_Person_ImgProfile")
