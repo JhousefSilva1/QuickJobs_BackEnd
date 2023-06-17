@@ -42,8 +42,6 @@ public class PersonController {
         return ResponseEntity.ok(this.personService.getUnavailable());
     }
 
-
-
     @PostMapping
     public ResponseEntity<PersonEntity> add(@RequestBody PersonEntity person){//el @RequestBody es para que el objeto que se le pasa por el body se guarde en la variable personEntity
            //valida si el id de la persona es nulo o si existe en la base de datos, si existe retorna un badRequest
