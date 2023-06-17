@@ -31,6 +31,19 @@ public class PersonController {
         return ResponseEntity.ok(this.personService.get(PersonId));
     }
 
+    // con este codigo se puede obtener todas las personas activas
+    @GetMapping("/available")
+    public ResponseEntity<List<PersonEntity>> getAvailable(){
+        return ResponseEntity.ok(this.personService.getAvailable());
+    }
+
+    @GetMapping("/unavailable")
+    public ResponseEntity<List<PersonEntity>> getUnavailable(){
+        return ResponseEntity.ok(this.personService.getUnavailable());
+    }
+
+
+
     @PostMapping
     public ResponseEntity<PersonEntity> add(@RequestBody PersonEntity person){//el @RequestBody es para que el objeto que se le pasa por el body se guarde en la variable personEntity
            //valida si el id de la persona es nulo o si existe en la base de datos, si existe retorna un badRequest
@@ -51,6 +64,18 @@ public class PersonController {
             return ResponseEntity.ok(this.personService.save(person));
         }
         //return ResponseEntity.ok(this.personService.save(person));
+        else {
+            return ResponseEntity.badRequest().build();
+        }
+
+
+    }
+    @DeleteMapping("/{PersonId}")
+    public ResponseEntity<Void> delete(@PathVariable Long PersonId){
+        if(this.personService.exists(PersonId)){
+            this.personService.delete(PersonId);
+            return ResponseEntity.ok().build();
+        }
         else {
             return ResponseEntity.badRequest().build();
         }

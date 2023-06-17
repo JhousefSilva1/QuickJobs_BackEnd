@@ -1,12 +1,18 @@
 package bo.edu.ucb.quickjobs.quickjobs.Persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Table(name = "qj_Request")
 public class RequestEntity {
     @Id
@@ -50,161 +56,170 @@ public class RequestEntity {
     private String txHost;
 
     @Column(name = "qj_Request_tx_Date", nullable = false)
-
     private String txDate;
 
     @ManyToOne
-    @JoinColumn(name = "qj_Service_qj_Servide_Id_Service", referencedColumnName = "qj_Servide_Id_Service", insertable = false, updatable = false)
-    private ServiceeEntity serviceeEntity;
+    @JoinColumn(name = "qj_Service_qj_Service_Id_Service",insertable = false, updatable = false)
+    private ServiceeEntity servicee;
+
     @ManyToOne
-    @JoinColumn(name = "qj_Address_qj_Address_Id_Address", referencedColumnName = "qj_Address_Id_Address", insertable = false, updatable = false)
+    @JoinColumn(name = "qj_Address_qj_Address_Id_Address",insertable = false, updatable = false)
     private AddressEntity address;
 
-//    @OneToMany(mappedBy = "requestEntity")
-//    private List<RequestEntity> requestEntityList;
-    public RequestEntity() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person",insertable = false, updatable = false)
+    private PersonEntity person;
 
-    public RequestEntity(Long  idRequest, int personId, int person2Id, int serviceId, int addressId, String beginDate, String endDate, int orderStatus, boolean status, int version, String txUser, String txHost, String txDate) {
-        this.idRequest = idRequest;
-        this.personId = personId;
-        this.person2Id = person2Id;
-        this.serviceId = serviceId;
-        this.addressId = addressId;
-        this.beginDate = beginDate;
-        this.endDate = endDate;
-        this.orderStatus = orderStatus;
-        this.status = status;
-        this.version = version;
-        this.txUser = txUser;
-        this.txHost = txHost;
-        this.txDate = txDate;
-    }
+    @ManyToOne
+    @JoinColumn(name = "qj_Person_qj_Person_Id_Person",insertable = false, updatable = false)
+    private PersonEntity person1;
 
-    public Long  getIdRequest() {
-        return idRequest;
-    }
 
-    public void setIdRequest(Long  idRequest) {
-        this.idRequest = idRequest;
-    }
 
-    public int getPersonId() {
-        return personId;
-    }
 
-    public void setPersonId(int personId) {
-        this.personId = personId;
-    }
-
-    public int getPerson2Id() {
-        return person2Id;
-    }
-
-    public void setPerson2Id(int person2Id) {
-        this.person2Id = person2Id;
-    }
-
-    public int getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
-    }
-
-    public int getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
-    }
-
-    public String getBeginDate() {
-        return beginDate;
-    }
-
-    public void setBeginDate(String beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public int getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(int orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public String getTxUser() {
-        return txUser;
-    }
-
-    public void setTxUser(String txUser) {
-        this.txUser = txUser;
-    }
-
-    public String getTxHost() {
-        return txHost;
-    }
-
-    public void setTxHost(String txHost) {
-        this.txHost = txHost;
-    }
-
-    public String getTxDate() {
-        return txDate;
-    }
-
-    public void setTxDate(String txDate) {
-        this.txDate = txDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Request{" +
-                "idRequest=" + idRequest +
-                ", personId=" + personId +
-                ", person2Id=" + person2Id +
-                ", serviceId=" + serviceId +
-                ", addressId=" + addressId +
-                ", beginDate=" + beginDate +
-                ", endDate=" + endDate +
-                ", orderStatus=" + orderStatus +
-                ", status=" + status +
-                ", version=" + version +
-                ", txUser='" + txUser + '\'' +
-                ", txHost='" + txHost + '\'' +
-                ", txDate=" + txDate +
-                '}';
-    }
-
-    // Constructor, getters, and setters...
-
-    // Additional methods...
+//    public RequestEntity() {
+//    }
+//
+//    public RequestEntity(Long  idRequest, int personId, int person2Id, int serviceId, int addressId, String beginDate, String endDate, int orderStatus, boolean status, int version, String txUser, String txHost, String txDate) {
+//        this.idRequest = idRequest;
+//        this.personId = personId;
+//        this.person2Id = person2Id;
+//        this.serviceId = serviceId;
+//        this.addressId = addressId;
+//        this.beginDate = beginDate;
+//        this.endDate = endDate;
+//        this.orderStatus = orderStatus;
+//        this.status = status;
+//        this.version = version;
+//        this.txUser = txUser;
+//        this.txHost = txHost;
+//        this.txDate = txDate;
+//    }
+//
+//    public Long  getIdRequest() {
+//        return idRequest;
+//    }
+//
+//    public void setIdRequest(Long  idRequest) {
+//        this.idRequest = idRequest;
+//    }
+//
+//    public int getPersonId() {
+//        return personId;
+//    }
+//
+//    public void setPersonId(int personId) {
+//        this.personId = personId;
+//    }
+//
+//    public int getPerson2Id() {
+//        return person2Id;
+//    }
+//
+//    public void setPerson2Id(int person2Id) {
+//        this.person2Id = person2Id;
+//    }
+//
+//    public int getServiceId() {
+//        return serviceId;
+//    }
+//
+//    public void setServiceId(int serviceId) {
+//        this.serviceId = serviceId;
+//    }
+//
+//    public int getAddressId() {
+//        return addressId;
+//    }
+//
+//    public void setAddressId(int addressId) {
+//        this.addressId = addressId;
+//    }
+//
+//    public String getBeginDate() {
+//        return beginDate;
+//    }
+//
+//    public void setBeginDate(String beginDate) {
+//        this.beginDate = beginDate;
+//    }
+//
+//    public String getEndDate() {
+//        return endDate;
+//    }
+//
+//    public void setEndDate(String endDate) {
+//        this.endDate = endDate;
+//    }
+//
+//    public int getOrderStatus() {
+//        return orderStatus;
+//    }
+//
+//    public void setOrderStatus(int orderStatus) {
+//        this.orderStatus = orderStatus;
+//    }
+//
+//    public boolean isStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(boolean status) {
+//        this.status = status;
+//    }
+//
+//    public int getVersion() {
+//        return version;
+//    }
+//
+//    public void setVersion(int version) {
+//        this.version = version;
+//    }
+//
+//    public String getTxUser() {
+//        return txUser;
+//    }
+//
+//    public void setTxUser(String txUser) {
+//        this.txUser = txUser;
+//    }
+//
+//    public String getTxHost() {
+//        return txHost;
+//    }
+//
+//    public void setTxHost(String txHost) {
+//        this.txHost = txHost;
+//    }
+//
+//    public String getTxDate() {
+//        return txDate;
+//    }
+//
+//    public void setTxDate(String txDate) {
+//        this.txDate = txDate;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Request{" +
+//                "idRequest=" + idRequest +
+//                ", personId=" + personId +
+//                ", person2Id=" + person2Id +
+//                ", serviceId=" + serviceId +
+//                ", addressId=" + addressId +
+//                ", beginDate=" + beginDate +
+//                ", endDate=" + endDate +
+//                ", orderStatus=" + orderStatus +
+//                ", status=" + status +
+//                ", version=" + version +
+//                ", txUser='" + txUser + '\'' +
+//                ", txHost='" + txHost + '\'' +
+//                ", txDate=" + txDate +
+//                '}';
+//    }
+//
+//    // Constructor, getters, and setters...
+//
+//    // Additional methods...
 }

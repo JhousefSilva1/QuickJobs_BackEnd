@@ -19,6 +19,16 @@ public class PersonService {
        // return personRepository.findAll();
         return this.personRepository.findAll();
     }
+    //metodo para obtener todas las personas activas
+    public List<PersonEntity> getAvailable(){
+        return this.personRepository.findAllByStatusTrue();
+    }
+
+    //metodo para obtener todas las personas inactivas
+    public List<PersonEntity> getUnavailable(){
+        return this.personRepository.findAllByStatusFalse();
+    }
+
     //metodo para obtener una persona por su id
     public PersonEntity get(Long PersonId){
         return this.personRepository.findById(PersonId).orElseThrow(()-> new RuntimeException("La persona no esta registrada en la base de datos"));
@@ -30,6 +40,10 @@ public class PersonService {
 
     public boolean exists(Long PersonId){
         return this.personRepository.existsById(PersonId);
+    }
+
+    public void delete(Long PersonId){
+        this.personRepository.deleteById(PersonId);
     }
 
 
