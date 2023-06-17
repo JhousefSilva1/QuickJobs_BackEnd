@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/GroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/dao/GroupRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/GroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/dao/AddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/AddressService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/AddressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Persistence/entity/AddressEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,8 @@
       <workItem from="1686758927674" duration="3453000" />
       <workItem from="1686798838078" duration="8214000" />
       <workItem from="1686846562723" duration="20287000" />
-      <workItem from="1686947960790" duration="22374000" />
+      <workItem from="1686947960790" duration="23286000" />
+      <workItem from="1687017057230" duration="6715000" />
     </task>
     <servers />
   </component>

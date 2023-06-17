@@ -1,8 +1,8 @@
 spring:
-  security:
-    user:
-      name: admin
-      password: 5c777d74-f9a0-4030-bdd3-a633aa0f5c6f
+#  security:
+#    user:
+#      name: admin
+#      password: 5c777d74-f9a0-4030-bdd3-a633aa0f5c6f
   datasource:
     url: jdbc:postgresql://localhost:5432/quickjobs_db
     username: admin
@@ -15,6 +15,9 @@ spring:
     show-sql: true
     database: postgresql
     generate-ddl: true
+    logging:
+      level:
+        org.springframework.security.web.*: DEBUG
 
 
 

@@ -23,7 +23,7 @@ public class RequestController {
         return ResponseEntity.ok(this.requestService.getAll());
     }
 
-    @PostMapping
+    @PostMapping("persons/{PersonId}")
     public ResponseEntity<RequestEntity> add(@RequestBody RequestEntity request){
 
         if(request.getIdRequest()== null || !this.requestService.exists(request.getIdRequest())){

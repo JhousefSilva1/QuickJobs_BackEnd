@@ -16,6 +16,8 @@ public class AddressEntity {
     @Column(name = "qj_Address_Id_Address")
     private Long  idAddress;
 
+    @Column(name = "qj_Person_qj_Person_Id_Person", nullable = false)
+    private int personId;
 
     @Column(name = "qj_Address_City", nullable = false)
     private String city;
@@ -51,7 +53,7 @@ public class AddressEntity {
     private String txHost;
 
     @Column(name = "qj_Address_tx_Date", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+  //  @Temporal(TemporalType.TIMESTAMP)
     private String txDate;
 
     @ManyToOne
