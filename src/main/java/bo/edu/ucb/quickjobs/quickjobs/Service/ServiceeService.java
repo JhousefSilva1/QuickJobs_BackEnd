@@ -20,4 +20,12 @@ public class ServiceeService {
     public List<ServiceeEntity> getAll(){
         return this.serviceeRepository.findAll();
     }
+
+    public ServiceeEntity save(ServiceeEntity servicee){
+        return this.serviceeRepository.save(servicee);
+    }
+
+    public boolean exists(Long serviceId){
+        return this.serviceeRepository.existsById(serviceId);
+    }
 }

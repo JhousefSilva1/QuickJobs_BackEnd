@@ -4,9 +4,7 @@ import bo.edu.ucb.quickjobs.quickjobs.Persistence.entity.ServiceeEntity;
 import bo.edu.ucb.quickjobs.quickjobs.Service.ServiceeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +22,14 @@ public class ServiceeController {
     @GetMapping
     public ResponseEntity<List<ServiceeEntity>> getAll(){
         return ResponseEntity.ok(this.serviceeService.getAll());
+    }
+    @PostMapping
+    public ResponseEntity<ServiceeEntity> add(@RequestBody ServiceeEntity servicee){
+        if (servicee.getIdService()== null || !this.serviceeService.exists(servicee.getIdService())){
+            return ResponseEntity.ok(this.serviceeService.save(servicee));
+        }
+        else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
