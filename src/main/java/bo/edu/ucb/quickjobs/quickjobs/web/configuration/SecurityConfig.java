@@ -1,4 +1,4 @@
-package bo.edu.ucb.quickjobs.quickjobs.configuration;//package bo.edu.ucb.quickjobs.quickjobs.configuration;
+package bo.edu.ucb.quickjobs.quickjobs.web.configuration;//package bo.edu.ucb.quickjobs.quickjobs.configuration;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
@@ -39,7 +39,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 .cors().and()
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("CUSTOMER")
+                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Clientes")
 //                .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
                 .anyRequest()

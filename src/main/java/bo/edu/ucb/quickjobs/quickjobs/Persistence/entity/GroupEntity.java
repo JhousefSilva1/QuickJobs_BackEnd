@@ -40,10 +40,9 @@ public class GroupEntity {
     //@Temporal(TemporalType.TIMESTAMP)
     private String txDate;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "idGroup")
-    private List<GroupEntity> groups;
-
+  //  @JsonBackReference
+    @OneToMany(mappedBy = "group")
+    private List<GroupPersonEntity> group;
 
 
     //    public GroupEntity() {
