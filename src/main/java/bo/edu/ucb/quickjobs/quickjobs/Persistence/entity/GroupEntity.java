@@ -40,103 +40,10 @@ public class GroupEntity {
     //@Temporal(TemporalType.TIMESTAMP)
     private String txDate;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "idGroup")
-    private List<GroupEntity> groups;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "group")
+//    private List<GroupPersonEntity> group;
 
-
-
-    //    public GroupEntity() {
-//    }
-//
-//    public GroupEntity(Long  idGroup, String groupName, String groupDescription, boolean status, int version, String txUser, String txHost, String txDate) {
-//        this.idGroup = idGroup;
-//        this.groupName = groupName;
-//        this.groupDescription = groupDescription;
-//        this.status = status;
-//        this.version = version;
-//        this.txUser = txUser;
-//        this.txHost = txHost;
-//        this.txDate = txDate;
-//    }
-//
-//    public Long  getIdGroup() {
-//        return idGroup;
-//    }
-//
-//    public void setIdGroup(Long idGroup) {
-//        this.idGroup = idGroup;
-//    }
-//
-//    public String getGroupName() {
-//        return groupName;
-//    }
-//
-//    public void setGroupName(String groupName) {
-//        this.groupName = groupName;
-//    }
-//
-//    public String getGroupDescription() {
-//        return groupDescription;
-//    }
-//
-//    public void setGroupDescription(String groupDescription) {
-//        this.groupDescription = groupDescription;
-//    }
-//
-//    public boolean isStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(boolean status) {
-//        this.status = status;
-//    }
-//
-//    public int getVersion() {
-//        return version;
-//    }
-//
-//    public void setVersion(int version) {
-//        this.version = version;
-//    }
-//
-//    public String getTxUser() {
-//        return txUser;
-//    }
-//
-//    public void setTxUser(String txUser) {
-//        this.txUser = txUser;
-//    }
-//
-//    public String getTxHost() {
-//        return txHost;
-//    }
-//
-//    public void setTxHost(String txHost) {
-//        this.txHost = txHost;
-//    }
-//
-//    public String getTxDate() {
-//        return txDate;
-//    }
-//
-//    public void setTxDate(String txDate) {
-//        this.txDate = txDate;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Group{" +
-//                "idGroup=" + idGroup +
-//                ", groupName='" + groupName + '\'' +
-//                ", groupDescription='" + groupDescription + '\'' +
-//                ", status=" + status +
-//                ", version=" + version +
-//                ", txUser='" + txUser + '\'' +
-//                ", txHost='" + txHost + '\'' +
-//                ", txDate=" + txDate +
-//                '}';
-//    }
 
 
 }

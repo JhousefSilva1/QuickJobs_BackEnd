@@ -17,6 +17,7 @@ public class AddressController {
         this.addressService = addressService;
     }
 
+
     @PostMapping("/persons/{personId}")
     public ResponseEntity<AddressEntity> add(@RequestBody AddressEntity address){
         if (address.getIdAddress() == null || !this.addressService.exists(address.getIdAddress())){

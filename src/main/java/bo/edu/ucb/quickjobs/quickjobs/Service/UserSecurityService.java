@@ -26,7 +26,7 @@ public class UserSecurityService implements UserDetailsService {
         return User.builder()
                 .username(personEntity.getEmail())
                 .password(personEntity.getPassword())
-                .roles("CUSTOMER")
+                .roles(personEntity.getAccountType())
                 .build();
     }
 

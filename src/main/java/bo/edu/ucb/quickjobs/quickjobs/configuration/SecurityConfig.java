@@ -39,9 +39,9 @@ public class SecurityConfig {
                 .csrf().disable()
                 .cors().and()
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("CUSTOMER")
+                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Customer")
 //                .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Employee")
                 .anyRequest()
 //                .permitAll();
                 .authenticated()
