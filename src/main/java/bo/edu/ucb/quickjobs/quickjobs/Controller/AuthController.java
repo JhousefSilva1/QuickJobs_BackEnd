@@ -1,5 +1,7 @@
 package bo.edu.ucb.quickjobs.quickjobs.Controller;
 
+import bo.edu.ucb.quickjobs.quickjobs.Persistence.dao.UserRepository;
+import bo.edu.ucb.quickjobs.quickjobs.Persistence.entity.PersonEntity;
 import bo.edu.ucb.quickjobs.quickjobs.Service.dto.LoginDto;
 import bo.edu.ucb.quickjobs.quickjobs.configuration.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/auth")
 public class AuthController {
     private final AuthenticationManager authenticationManager;
+
+    private final UserRepository userRepository;
+
+
     private final JwtUtil jwtUtil;
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, JwtUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
+        this.userRepository = userRepository;
         this.jwtUtil = jwtUtil;
     }
     @PostMapping("/login")
@@ -31,7 +38,14 @@ public class AuthController {
         System.out.println(authentication.isAuthenticated());
         System.out.println(authentication.getPrincipal());
 
-        String jwt = this.jwtUtil.create(loginDto.getEmail());
+
+        PersonEntity personEntity = userRepository.findByEmail(loginDto.getEmail());
+        System.out.println(personEntity.getAccountType());
+
+
+     //   String jwt = this.jwtUtil.create(loginDto.getEmail(), loginDto.getAccountType());
+
+        String jwt = this.jwtUtil.create(loginDto.getEmail(), personEntity.getAccountType());
 
         return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).build();
     }

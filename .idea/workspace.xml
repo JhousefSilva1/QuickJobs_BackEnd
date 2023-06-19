@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/dto/LoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http/auth.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/JwtFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/dto/LoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTTP Request" />
         <option value="Class" />
       </list>
     </option>
@@ -86,13 +89,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.QuickjobsApplication">
-    <configuration name="qj_Person.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/db/Date/qj_Person.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="b9e0d60c-547a-4e6d-8cb9-89a81b846dda" />
+    <configuration name="All in person" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/http/person.http">
       <method v="2" />
     </configuration>
-    <configuration name="All in person" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/http/person.http">
+    <configuration name="auth | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/http/auth.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="person | Autenticacion correcta" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/http/person.http" requestIdentifier="Autenticacion correcta" runType="Run single request">
@@ -114,10 +114,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.person | Obtener Personas (1)" />
+        <item itemvalue="HTTP Request.auth | #1" />
         <item itemvalue="HTTP Request.All in person" />
         <item itemvalue="HTTP Request.person | Obtener Personas" />
         <item itemvalue="HTTP Request.person | Autenticacion correcta" />
-        <item itemvalue="Database Script.qj_Person.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -140,6 +140,7 @@
       <workItem from="1686947960790" duration="23286000" />
       <workItem from="1687017057230" duration="16799000" />
       <workItem from="1687135469221" duration="121000" />
+      <workItem from="1687151096172" duration="1956000" />
     </task>
     <servers />
   </component>
@@ -175,11 +176,6 @@
           <properties class="org.hibernate.MappingException" package="org.hibernate" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java</url>
-          <line>1</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

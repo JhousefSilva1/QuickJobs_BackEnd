@@ -18,38 +18,47 @@ package bo.edu.ucb.quickjobs.quickjobs.configuration;//package bo.edu.ucb.quickj
 //        return httpSecurity.build();
 //    }
 //}
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
+
+    private final JwtFilter jwtFilter;
+    @Autowired
+    public SecurityConfig(JwtFilter jwtFilter) {
+        this.jwtFilter = jwtFilter;
+    }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .cors().and()
+               // .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/auth/**").permitAll()
-                //.requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Customer")
+                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Customer", "Employee")
                // .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
                // .requestMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Employee")
                 .anyRequest()
 //                .permitAll();
                 .authenticated()
                 .and()
-                .httpBasic();
+                .addFilterBefore(jwtFilter, BasicAuthenticationFilter.class);
+
+               //.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
+
+
         return http.build();
     }
 //    @Bean
@@ -78,14 +87,7 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
 
-//            @Override
-//            public String encode(CharSequence charSequence) {
-//                return charSequence.toString();
-//            }
-//            @Override
-//            public boolean matches(CharSequence charSequence, String s) {
-//                return charSequence.toString().equals(s);
-//            }
+
         return new BCryptPasswordEncoder();
     }
 }

@@ -14,22 +14,34 @@ public class JwtUtil {
     private static Algorithm ALGORITHM = Algorithm.HMAC256(SECRET_KEY);
 
 
-    public String create(String email){
+    public String create(String email, String accountType){
         return JWT.create()
                 .withSubject(email)
+                .withClaim("accountType", accountType)
                 .withIssuer("ucb")
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis()+ TimeUnit.DAYS.toMillis(1)))
+
                 .sign(ALGORITHM);
 
     }
 
     public boolean isValid(String token){
         try{
-            JWT.require(ALGORITHM).build().verify(token);
+            JWT.require(ALGORITHM)
+                    .build()
+                    .verify(token);
             return true;
         }catch (Exception e){
             return false;
         }
+    }
+
+    public String getEmail(String token){
+        return JWT
+                .require(ALGORITHM)
+                .build()
+                .verify(token)
+                .getSubject();
     }
 }
