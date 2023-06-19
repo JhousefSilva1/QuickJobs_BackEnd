@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/addresses")
 public class AddressController {
@@ -17,6 +19,10 @@ public class AddressController {
         this.addressService = addressService;
     }
 
+    @GetMapping
+    public ResponseEntity<List<AddressEntity>> getAll(){
+        return ResponseEntity.ok(this.addressService.getAll());
+    }
 
     @PostMapping("/persons/{personId}")
     public ResponseEntity<AddressEntity> add(@RequestBody AddressEntity address){
@@ -28,5 +34,11 @@ public class AddressController {
         }
 //        return ResponseEntity.ok(this.addressService.save(address));
     }
+
+    @GetMapping("/{AddressId}")
+    public ResponseEntity<AddressEntity> get(@PathVariable Long AddressId){
+        return ResponseEntity.ok(this.addressService.get(AddressId));
+    }
+
 
 }
