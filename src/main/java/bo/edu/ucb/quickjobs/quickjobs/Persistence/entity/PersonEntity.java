@@ -62,15 +62,9 @@ public class PersonEntity {
     @Column(name = "qj_Person_tx_Date", nullable = false)
     private String txDate;
 
-
-    @OneToMany(mappedBy = "person",fetch = FetchType.EAGER)
-    private List<GroupPersonEntity> person;
-
-
-
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "person")
-//    private List<PersonEntity> persons;
+    @JsonBackReference
+    @OneToMany(mappedBy = "idPerson")
+    private List<PersonEntity> persons;
 
 
 

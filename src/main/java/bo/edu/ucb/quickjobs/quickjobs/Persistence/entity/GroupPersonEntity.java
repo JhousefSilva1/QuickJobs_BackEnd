@@ -50,9 +50,6 @@ public class GroupPersonEntity {
 
 
 
-
-
-
     //
 //    public GroupPersonEntity() {
 //    }

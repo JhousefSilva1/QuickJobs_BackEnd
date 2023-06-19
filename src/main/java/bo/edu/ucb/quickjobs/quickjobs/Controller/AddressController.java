@@ -1,4 +1,4 @@
-package bo.edu.ucb.quickjobs.quickjobs.web.Controller;
+package bo.edu.ucb.quickjobs.quickjobs.Controller;
 
 import bo.edu.ucb.quickjobs.quickjobs.Persistence.entity.AddressEntity;
 import bo.edu.ucb.quickjobs.quickjobs.Service.AddressService;
