@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ca37f9-2913-40f6-9218-eef74e83768d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/dto/LoginDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/Service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bo/edu/ucb/quickjobs/quickjobs/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

@@ -22,6 +22,8 @@ package bo.edu.ucb.quickjobs.quickjobs.configuration;//package bo.edu.ucb.quickj
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,9 +41,10 @@ public class SecurityConfig {
                 .csrf().disable()
                 .cors().and()
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Customer")
-//                .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Employee")
+                .requestMatchers("/api/v1/auth/**").permitAll()
+                //.requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Customer")
+               // .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
+               // .requestMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Employee")
                 .anyRequest()
 //                .permitAll();
                 .authenticated()
@@ -66,6 +69,12 @@ public class SecurityConfig {
 //
 //        return new InMemoryUserDetailsManager(admin,customer);
 //    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+        return configuration.getAuthenticationManager();
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
 
