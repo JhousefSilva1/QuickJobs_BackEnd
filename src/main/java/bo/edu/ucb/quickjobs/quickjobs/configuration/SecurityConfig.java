@@ -56,6 +56,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/api/v1/addresses/**").permitAll()
                 .requestMatchers(HttpMethod.POST,"/api/v1/addresses/**").hasAnyRole("Customer")
                 .requestMatchers(HttpMethod.GET, "/api/v1/persons/**").hasRole("Customer")
+                .requestMatchers(HttpMethod.POST, "/api/v1/persons/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

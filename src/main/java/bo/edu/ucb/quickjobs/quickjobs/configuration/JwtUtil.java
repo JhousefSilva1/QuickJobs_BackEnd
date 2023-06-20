@@ -14,12 +14,13 @@ public class JwtUtil {
     private static Algorithm ALGORITHM = Algorithm.HMAC256(SECRET_KEY);
 
 
-    public String create(String email, String accountType, String names, String surnames){
+    public String create(String email, String accountType, String names, String surnames, Long idPerson){
         return JWT.create()
                 .withSubject(email)
                 .withClaim("accountType", accountType)
                 .withClaim("names", names)
                 .withClaim("surnames", surnames)
+                .withClaim("id", idPerson)
                 .withIssuer("ucb")
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis()+ TimeUnit.DAYS.toMillis(1)))

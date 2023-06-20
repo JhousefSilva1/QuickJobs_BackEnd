@@ -1,9 +1,11 @@
 package bo.edu.ucb.quickjobs.quickjobs.Controller;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import bo.edu.ucb.quickjobs.quickjobs.Persistence.entity.PersonEntity;
 import bo.edu.ucb.quickjobs.quickjobs.Service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +15,8 @@ import java.util.List;
 public class PersonController {
 
     private final PersonService personService;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
     @Autowired
@@ -49,7 +53,9 @@ public class PersonController {
            //valida si el id de la persona es nulo o si existe en la base de datos, si existe retorna un badRequest
             // si no existe retorna un ok, y se guarda la persona
         if(person.getIdPerson()== null || !this.personService.exists(person.getIdPerson())){
-               return ResponseEntity.ok(this.personService.save(person));
+            String password = bCryptPasswordEncoder.encode(person.getPassword());
+            person.setPassword(password);
+            return ResponseEntity.ok(this.personService.save(person));
            }
         //return ResponseEntity.ok(this.personService.save(person));
         else {

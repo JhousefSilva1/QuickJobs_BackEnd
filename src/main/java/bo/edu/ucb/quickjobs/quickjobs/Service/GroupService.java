@@ -16,16 +16,28 @@ public class GroupService {
     public GroupService(GroupRepository groupRepository){
         this.groupRepository = groupRepository;
     }
-    //Obtener todos los grupos
+
+    //1. Obtener todos los grupos
     public List<GroupEntity> getAll(){
         return this.groupRepository.findAll();
     }
 
+    //2. Obtener un grupo por su id
+    public GroupEntity get(Long groupId){
+        return this.groupRepository.findById(groupId).orElseThrow();
+    }
+
+    //3. agregar un grupo
     public GroupEntity save(GroupEntity group){
         return this.groupRepository.save(group);
     }
-
+    //4. Verificar si existe un grupo
     public boolean exists(Long groupId){
         return this.groupRepository.existsById(groupId);
+    }
+
+    //5. Eliminar un grupo
+    public void delete(Long groupId){
+        this.groupRepository.deleteById(groupId);
     }
 }

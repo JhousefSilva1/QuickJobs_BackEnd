@@ -24,13 +24,11 @@ public class AddressController {
     public ResponseEntity<AddressEntity> get(@PathVariable Long AddressId){
         return ResponseEntity.ok(this.addressService.get(AddressId));
     }
-
     //2. Obtener todas las direcciones
     @GetMapping
     public ResponseEntity<List<AddressEntity>> getAll(){
         return ResponseEntity.ok(this.addressService.getAll());
     }
-
     //4. Agregar una direccion a una persona
     @PostMapping("/persons/{personId}")
     public ResponseEntity<AddressEntity> add(@RequestBody AddressEntity address){
@@ -52,7 +50,27 @@ public class AddressController {
         }
     }
 
+    //6. Eliminar una direccion de una persona
+    @DeleteMapping("/{addressId}")
+    public ResponseEntity<Void> delete(@PathVariable Long addressId){
+        if (this.addressService.exists(addressId)){
+            this.addressService.delete(addressId);
+            return ResponseEntity.ok().build();
+        }
+        else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
+    //7. Obtener direcciones activas
+    @GetMapping("/available")
+    public ResponseEntity<List<AddressEntity>> getAvailable(){
+        return ResponseEntity.ok(this.addressService.getAvailable());
+    }
 
-
+    //8. Obtener direcciones inactivas
+    @GetMapping("/unavailable")
+    public ResponseEntity<List<AddressEntity>> getUnavailable(){
+        return ResponseEntity.ok(this.addressService.getUnavailable());
+    }
 }

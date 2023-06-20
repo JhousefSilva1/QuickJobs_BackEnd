@@ -49,7 +49,7 @@ public class AuthController {
 
      //   String jwt = this.jwtUtil.create(loginDto.getEmail(), loginDto.getAccountType());
 
-        String jwt = this.jwtUtil.create(loginDto.getEmail(), personEntity.getAccountType(), personEntity.getNames(), personEntity.getSurnames());
+        String jwt = this.jwtUtil.create(loginDto.getEmail(), personEntity.getAccountType(), personEntity.getNames(), personEntity.getSurnames(),personEntity.getIdPerson());
 
        // return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).build();
         //returonar json
