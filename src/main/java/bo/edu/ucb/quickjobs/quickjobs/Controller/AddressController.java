@@ -24,6 +24,7 @@ public class AddressController {
     public ResponseEntity<AddressEntity> get(@PathVariable Long AddressId){
         return ResponseEntity.ok(this.addressService.get(AddressId));
     }
+
     //2. Obtener todas las direcciones
     @GetMapping
     public ResponseEntity<List<AddressEntity>> getAll(){
@@ -73,4 +74,8 @@ public class AddressController {
     public ResponseEntity<List<AddressEntity>> getUnavailable(){
         return ResponseEntity.ok(this.addressService.getUnavailable());
     }
+
+    //9. Obtener todas las direcciones de una persona
+
+
 }

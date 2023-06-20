@@ -7,12 +7,21 @@ import java.util.List;
 
 public interface AddressRepository extends ListCrudRepository<AddressEntity, Long> {
 
-    String findAllByPersonId(Long personId);
+
 
 
     List<AddressEntity> findAllByStatusTrue();
 
     List<AddressEntity>findAllByStatusFalse();
+
+
+
+
+
+
+
+
+
 
 
 }

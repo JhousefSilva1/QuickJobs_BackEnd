@@ -18,18 +18,17 @@ public class AddressService {
 
     }
     // 1. Obtener una direccion por su id
-
     public AddressEntity get(Long addressId){
         return this.addressRepository.findById(addressId).orElseThrow();
     }
+
+    // 1.1 obtener una direccion por su id de persona
+
     // 2. Obtener todas las direcciones
     public List<AddressEntity> getAll(){
         return this.addressRepository.findAll();
     }
     // 3 Obtener todas las direcciones de una persona
-    public String getAllByPerson(Long personId){
-        return this.addressRepository.findAllByPersonId(personId);
-    }
 
     //4. Agregar una direccion
     public AddressEntity save(AddressEntity address){
@@ -55,4 +54,6 @@ public class AddressService {
     public void delete(Long addressId){
         this.addressRepository.deleteById(addressId);
     }
+
+
 }
