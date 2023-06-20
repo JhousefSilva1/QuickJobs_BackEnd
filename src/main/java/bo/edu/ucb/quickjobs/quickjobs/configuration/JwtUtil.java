@@ -21,27 +21,26 @@ public class JwtUtil {
                 .withIssuer("ucb")
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis()+ TimeUnit.DAYS.toMillis(1)))
-
                 .sign(ALGORITHM);
 
     }
 
-    public boolean isValid(String token){
+    public boolean isValid(String jwt){
         try{
             JWT.require(ALGORITHM)
                     .build()
-                    .verify(token);
+                    .verify(jwt);
             return true;
         }catch (Exception e){
             return false;
         }
     }
 
-    public String getEmail(String token){
+    public String getEmail(String jwt){
         return JWT
                 .require(ALGORITHM)
                 .build()
-                .verify(token)
+                .verify(jwt)
                 .getSubject();
     }
 }

@@ -19,6 +19,10 @@ public class AddressService {
         return this.addressRepository.findAll();
     }
 
+    public String getAllByPerson(Long personId){
+        return this.addressRepository.findAllByPersonId(personId);
+    }
+
     @Autowired
     public AddressService(AddressRepository addressRepository) {
         this.addressRepository = addressRepository;

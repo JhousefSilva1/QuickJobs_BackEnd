@@ -33,7 +33,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         // 1. Validar que sea un header Authorization valido
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if(authHeader == null  || !authHeader.startsWith("Bearer ")){
+        if(authHeader == null  || !authHeader.startsWith("Bearer")){
             filterChain.doFilter(request, response);
             return;
         }

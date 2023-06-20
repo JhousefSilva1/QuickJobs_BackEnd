@@ -19,11 +19,19 @@ public class AddressController {
         this.addressService = addressService;
     }
 
+    //1. Obtener una direccion por su id
+    @GetMapping("/{addressId}")
+    public ResponseEntity<AddressEntity> get(@PathVariable Long AddressId){
+        return ResponseEntity.ok(this.addressService.get(AddressId));
+    }
+
+    //2. Obtener todas las direcciones
     @GetMapping
     public ResponseEntity<List<AddressEntity>> getAll(){
         return ResponseEntity.ok(this.addressService.getAll());
     }
 
+    //4. Agregar una direccion a una persona
     @PostMapping("/persons/{personId}")
     public ResponseEntity<AddressEntity> add(@RequestBody AddressEntity address){
         if (address.getIdAddress() == null || !this.addressService.exists(address.getIdAddress())){
@@ -34,11 +42,17 @@ public class AddressController {
         }
 //        return ResponseEntity.ok(this.addressService.save(address));
     }
-
-    @GetMapping("/{AddressId}")
-    public ResponseEntity<AddressEntity> get(@PathVariable Long AddressId){
-        return ResponseEntity.ok(this.addressService.get(AddressId));
+    //5. Actualizar una direccion de una persona
+    @PutMapping
+    public ResponseEntity<AddressEntity> update(@RequestBody AddressEntity address) {
+        if (address.getIdAddress() == null || !this.addressService.exists(address.getIdAddress())) {
+            return ResponseEntity.ok(this.addressService.save(address));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
+
+
 
 
 }
