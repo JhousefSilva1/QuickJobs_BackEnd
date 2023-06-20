@@ -20,6 +20,8 @@ public class PersonController {
         this.personService = personService;
     }
     //  con este codigo se puede obtener todas las personas
+
+
     @GetMapping
     public ResponseEntity<List<PersonEntity>> getAll(){
        return ResponseEntity.ok(this.personService.getAll());
