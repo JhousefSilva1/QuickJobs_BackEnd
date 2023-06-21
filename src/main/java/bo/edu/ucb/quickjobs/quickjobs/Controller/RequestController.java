@@ -18,12 +18,13 @@ public class RequestController {
     public RequestController(RequestService requestService) {
         this.requestService = requestService;
     }
+
     @GetMapping
     public ResponseEntity<List<RequestEntity>> getAll(){
         return ResponseEntity.ok(this.requestService.getAll());
     }
 
-    @PostMapping("persons/{PersonId}")
+    @PostMapping("/persons/{PersonId}")
     public ResponseEntity<RequestEntity> add(@RequestBody RequestEntity request){
 
         if(request.getIdRequest()== null || !this.requestService.exists(request.getIdRequest())){
@@ -33,6 +34,17 @@ public class RequestController {
             return ResponseEntity.badRequest().build();
         }
        // return ResponseEntity.ok(this.requestService.save(request));
+    }
+    // Eliminar Solcitud
+    @DeleteMapping("/{requestId}")
+    public void delete(@PathVariable Long requestId){
+        this.requestService.delete(requestId);
+    }
+
+    // Actualizar Solictud
+    @PutMapping("/persons/{PersonId}")
+    public ResponseEntity<RequestEntity> update(@RequestBody RequestEntity request){
+        return ResponseEntity.ok(this.requestService.update(request));
     }
 
 }

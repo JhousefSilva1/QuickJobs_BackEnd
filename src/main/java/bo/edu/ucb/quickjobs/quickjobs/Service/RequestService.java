@@ -27,4 +27,14 @@ public class RequestService {
     public boolean exists(Long requestId){
         return this.requestRepository.existsById(requestId);
     }
+
+    // Eliminar una solicitud
+    public void delete(Long requestId){
+        this.requestRepository.deleteById(requestId);
+    }
+
+    //Actualizar una solicitud
+    public RequestEntity update(RequestEntity request){
+        return this.requestRepository.save(request);
+    }
 }
