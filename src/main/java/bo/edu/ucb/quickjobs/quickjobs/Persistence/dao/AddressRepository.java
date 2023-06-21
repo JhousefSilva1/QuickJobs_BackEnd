@@ -14,7 +14,8 @@ public interface AddressRepository extends ListCrudRepository<AddressEntity, Lon
 
     List<AddressEntity>findAllByStatusFalse();
 
-
+    //Listar address por id de persona
+    List<AddressEntity>findByPersonId(Long personId);
 
 
 

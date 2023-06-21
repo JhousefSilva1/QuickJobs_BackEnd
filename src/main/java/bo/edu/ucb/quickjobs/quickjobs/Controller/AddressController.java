@@ -77,5 +77,8 @@ public class AddressController {
 
     //9. Obtener todas las direcciones de una persona
 
-
+    @GetMapping("/persons/{personId}")
+    public ResponseEntity<List<AddressEntity>> getAllByPerson(@PathVariable Long personId){
+        return ResponseEntity.ok(this.addressService.getByPersonId(personId));
+    }
 }
